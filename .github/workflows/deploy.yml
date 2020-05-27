@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: laravel
+        working-directory: ./laravel
     steps:
       - uses: actions/checkout@v1
       - uses: nathanheffley/laravel-phpunit-action@master
