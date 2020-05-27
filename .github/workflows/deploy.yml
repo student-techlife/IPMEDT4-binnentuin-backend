@@ -9,10 +9,10 @@ jobs:
   phpunit:
     name: PHPUnit
     runs-on: ubuntu-latest
+    working-directory: ./laravel
     steps:
       - uses: actions/checkout@v1
       - uses: nathanheffley/laravel-phpunit-action@master
-        working-directory: ./laravel
   deploy:
     name: Deploy to production
     runs-on: ubuntu-latest
