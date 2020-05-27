@@ -9,7 +9,9 @@ jobs:
   phpunit:
     name: PHPUnit
     runs-on: ubuntu-latest
-    working-directory: ./laravel
+    defaults:
+      run:
+        working-directory: laravel
     steps:
       - uses: actions/checkout@v1
       - uses: nathanheffley/laravel-phpunit-action@master
