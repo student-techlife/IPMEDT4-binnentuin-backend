@@ -9,12 +9,17 @@ jobs:
   phpunit:
     name: PHPUnit
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./laravel
     steps:
       - uses: actions/checkout@v1
-      - uses: nathanheffley/laravel-phpunit-action@master
+      # - uses: nathanheffley/laravel-phpunit-action@master
+      - name: Laravel PHPunit test
+        run: |
+          cd laravel
+          composer install --prefer-dist
+          cp .env.example .env
+          php artisan key:generate
+          php vendor/bin/phpunit
+        working-directory: ./laravel
   deploy:
     name: Deploy to production
     runs-on: ubuntu-latest
