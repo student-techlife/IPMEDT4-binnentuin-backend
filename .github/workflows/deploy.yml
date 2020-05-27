@@ -2,7 +2,8 @@ name: Binnentuinapp
 
 on:
   push:
-    branches: master
+    # De branch waarop het getriggerd wordt
+    branches: dev
 
 jobs:
   phpunit:
