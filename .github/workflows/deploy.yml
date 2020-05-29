@@ -13,7 +13,6 @@ jobs:
       # - uses: nathanheffley/laravel-phpunit-action@master
       - name: Laravel PHPunit test
         run: |
-          cd ./laravel
           composer install --prefer-dist
           cp .env.example .env
           php artisan key:generate
