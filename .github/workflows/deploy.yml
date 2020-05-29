@@ -41,3 +41,11 @@ jobs:
       # Push new docker image
       - name: Push docker image
         run: docker push studenttechlife/plant:backend
+      # Deploy to swarm
+      - name: Deploy to swarm
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: docker service update --image studenttechlife/plant:backend plant_backend
+          host: ${{ secrets.DOCKER_VPN }}
+          username: plant
+          privateKey: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
