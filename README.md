@@ -1,3 +1,5 @@
+![Binnentuin - Backend deploy](https://github.com/student-techlife/IPMEDT4-binnentuin-backend/workflows/Binnentuin%20-%20Backend%20deploy/badge.svg)
+
 # De Binnentuin app 
 
 Deze repository is de backend-side van de binnentuin applicatie.<br>
@@ -10,7 +12,7 @@ Project groep bestaande uit:
 - Joeri
 - Ard
 
-# ℹ️ Gebruik van deze repository
+## ℹ️ Gebruik van deze repository
 
 Om zoveel mogelijk git probleempjes te voorkomen, zijn er een aantal richtlijnen:
 
