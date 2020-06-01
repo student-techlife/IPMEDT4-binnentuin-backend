@@ -1,6 +1,11 @@
-name: Binnentuin - Backend
+name: Binnentuin - Backend deploy
 on:
   push:
+    # Negeer commits die zijn gemaakt in:
+    paths-ignore:
+      - '.github/**'
+      - 'README.md'
+      - LICENSE
     # De branch waarop het getriggerd wordt
     branches: dev
 
