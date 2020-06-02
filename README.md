@@ -1,4 +1,5 @@
 ![Binnentuin - Backend deploy](https://github.com/student-techlife/IPMEDT4-binnentuin-backend/workflows/Binnentuin%20-%20Backend%20deploy/badge.svg)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=student-techlife/IPMEDT4-binnentuin-backend)](https://dependabot.com)
 
 # De Binnentuin app (backend)
 
