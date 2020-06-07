@@ -8,22 +8,21 @@
                 BinnenTuin Adminpanel
             </span>
             <form class="login100-form p-b-33 p-t-5" method="POST"  action="{{ route('login') }}">
-                {{ csrf_field() }}
+                @csrf
 
                 @if($errors->any())
-                <div class="text-center p-t-20 m-l-20 m-r-20">
+                <div class="text-center p-t-20">
                     <h4 style="color:red;">{{$errors->first()}}</h4>
                 </div>
                 @endif
 
-                <div class="wrap-input100" data-validate = "Vul uw gebruikersnaam in">
-                    <input class="input100" type="text" value="{{ old('username') }}" id="username" required="" oninvalid="this.setCustomValidity('Gebruikersnaam is vereist')"
-                    oninput="setCustomValidity('')" name="username" placeholder="Gebruikersnaam">
+                <div class="wrap-input100 @error('email') is-invalid @enderror" data-validate = "Vul uw gebruikersnaam in">
+                    <input class="input100" type="text" value="{{ old('username') }}" required name="username" placeholder="Gebruikersnaam">
                     <span class="focus-input100" data-placeholder="&#xe82a;"></span>
                 </div>
 
-                <div class="wrap-input100" data-validate="Vul uw wachtwoord in">
-                    <input class="input100" type="password" id="password" name="password" required="" oninvalid="this.setCustomValidity('Wachtwoord is vereist')" oninput="setCustomValidity('')" placeholder="Wachtwoord">
+                <div class="wrap-input100 @error('password') is-invalid @enderror" data-validate="Vul uw wachtwoord in">
+                    <input class="input100" type="password" name="password" placeholder="Wachtwoord">
                     <span class="focus-input100" data-placeholder="&#xe80f;"></span>
                 </div>
 
