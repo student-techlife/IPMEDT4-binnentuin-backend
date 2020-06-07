@@ -1,49 +1,46 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="limiter">
-    <div class="container-login100" style="background-image: url('/img/bg_1.png');">
-        <div class="wrap-login100 p-t-30 p-b-50">
-            <span class="login100-form-title p-b-41">
-                Wachtwoord vergeten
-            </span>
-            <form class="login100-form p-b-33 p-t-5" method="POST"  action="{{ route('password.email') }}">
-                @csrf
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Reset Password') }}</div>
 
-                @if($errors->any())
-                <div class="text-center p-t-20 m-l-20 m-r-20">
-                    <h4 style="color:red;">{{$errors->first()}}</h4>
-                </div>
-                @endif
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
 
-                @if (session('status'))
-                <div class="text-center p-t-20 m-l-20 m-r-20">
-                    <h4 style="color:green;">{{ session('status') }}</h4>
-                </div>
-                @endif
+                    <form method="POST" action="{{ route('password.email') }}">
+                        @csrf
 
-                <div class="wrap-input100" data-validate = "Vul uw e-mail in">
-                    <input class="input100" type="email" value="{{ old('email') }}" id="email" required="" oninvalid="this.setCustomValidity('E-mail is vereist')"
-                    oninput="setCustomValidity('')" name="email" placeholder="E-mail">
-                    <span class="focus-input100" data-placeholder="&#xe82a;"></span>
-                </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
-                <div class="container-login100-form-btn m-t-32">
-                    <button class="login100-form-btn" type="submit">
-                        Verstuur Aanvraag
-                    </button>
-                </div>
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                <div class="text-center p-t-20">
-                    <span class="txt1">
-                        Toch niet vergeten?
-                    </span>
-                    <a class="txt2" href="{{ url('/') }}">
-                        Inloggen!
-                    </a>
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Send Password Reset Link') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                
-            </form>
+            </div>
         </div>
     </div>
 </div>
