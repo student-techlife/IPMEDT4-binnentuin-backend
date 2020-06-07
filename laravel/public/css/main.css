@@ -132,10 +132,19 @@
   /*//////////////////////////////////////////////////////////////////
   [ Utility ]*/
   .txt1 {
-    font-family: Poppins-Regular;
-    font-size: 13px;
-    color: #e5e5e5;
+    font-size: 15px;
+    color: #666;
     line-height: 1.5;
+    font-weight: 400;
+  }
+  .txt2:hover {
+      color: #666;
+  }
+  .txt2 {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.5;
+    font-weight: 400;
   }
   
   
