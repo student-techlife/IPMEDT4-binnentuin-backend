@@ -1,100 +1,54 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
+@section('content')
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('/img/bg_1.png');">
+        <div class="wrap-login100 p-t-30 p-b-50">
+            <span class="login100-form-title p-b-41">
+                Binnentuin Adminpanel
+            </span>
+            <form class="login100-form p-b-33 p-t-5" method="POST"  action="{{ route('login') }}">
+                @csrf
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+                @if($errors->any())
+                <div class="text-center p-t-20 m-l-20 m-r-20">
+                    <h4 style="color:red;">{{$errors->first()}}</h4>
                 </div>
-            @endif
+                @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div class="wrap-input100" data-validate = "Vul uw gebruikersnaam in">
+                    <input class="input100" type="text" value="{{ old('username') }}" id="username" required="" oninvalid="this.setCustomValidity('Gebruikersnaam is vereist')"
+                    oninput="setCustomValidity('')" name="username" placeholder="Gebruikersnaam">
+                    <span class="focus-input100" data-placeholder="&#xe82a;"></span>
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="wrap-input100" data-validate="Vul uw wachtwoord in">
+                    <input class="input100" type="password" id="password" name="password" required="" oninvalid="this.setCustomValidity('Wachtwoord is vereist')" oninput="setCustomValidity('')" placeholder="Wachtwoord">
+                    <span class="focus-input100" data-placeholder="&#xe80f;"></span>
                 </div>
-            </div>
+
+                <div class="container-login100-form-btn m-t-32">
+                    <button class="login100-form-btn" type="submit">
+                        Inloggen
+                    </button>
+                </div>
+
+                @if (Route::has('password.request'))
+                <div class="text-center p-t-20">
+                    <span class="txt1">
+                        Wachtwoord vergeten?
+                    </span>
+                    <a class="txt2" href="{{ route('password.request') }}">
+                        Aanvragen!
+                    </a>
+                </div>
+                @endif
+                
+            </form>
         </div>
-    </body>
-</html>
+    </div>
+</div>
+
+<div id="dropDownSelect1"></div>
+
+@endsection
