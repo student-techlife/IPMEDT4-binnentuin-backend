@@ -27,7 +27,6 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
-
     /**
      * Create a new controller instance.
      *
@@ -38,7 +37,19 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function username() {
-        return 'username';
+    /**
+    * Get the login username to be used by the controller.
+    *
+    * @return string
+    */
+    public function username()
+    {
+        $login = request()->input('username');
+
+        $field = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        request()->merge([$field => $login]);
+
+        return $field;
     }
+
 }

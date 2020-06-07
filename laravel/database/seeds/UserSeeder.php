@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
             'name' => Str::random(10),
             'email' => Str::random(10).'@gmail.com',
             'username' => 'admin',
-            'password' => '123',
+            'password' => bcrypt('123')
         ]);
     }
 }
