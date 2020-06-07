@@ -1,64 +1,54 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('/img/bg_1.png');">
+        <div class="wrap-login100 p-t-30 p-b-50">
+            <span class="login100-form-title p-b-41">
+                Wachtwoord veranderen
+            </span>
+            <form class="login100-form p-b-33 p-t-5" method="POST"  action="{{ route('password.update') }}">
+                @csrf
+                <input type="hidden" name="token" value="{{ $token }}">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('password.update') }}">
-                        @csrf
-
-                        <input type="hidden" name="token" value="{{ $token }}">
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Reset Password') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                @if($errors->any())
+                <div class="text-center p-t-20 m-l-20 m-r-20">
+                    <h4 style="color:red;">{{$errors->first()}}</h4>
                 </div>
-            </div>
+                @endif
+
+                <div class="wrap-input100" data-validate = "Vul uw e-mail in">
+                    <input class="input100" type="email" value="{{ old('email') }}" id="email" required="" oninvalid="this.setCustomValidity('E-mail is vereist')"
+                    oninput="setCustomValidity('')" name="email" placeholder="E-mail">
+                    <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                </div>
+
+                <div class="wrap-input100" data-validate="Vul uw nieuwe wachtwoord in">
+                    <input class="input100" type="password" id="password" name="password" required="" oninvalid="this.setCustomValidity('Wachtwoord is vereist')" oninput="setCustomValidity('')" placeholder="Nieuw Wachtwoord">
+                    <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                </div>
+
+                <div class="wrap-input100" data-validate="Vul uw nieuwe wachtwoord opnieuw in">
+                    <input class="input100" type="password" id="password-confirm" name="password_confirmation" required="" oninvalid="this.setCustomValidity('Wachtwoord is vereist')" oninput="setCustomValidity('')" placeholder="Nieuw Wachtwoord">
+                    <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                </div>
+
+                <div class="container-login100-form-btn m-t-32">
+                    <button class="login100-form-btn" type="submit">
+                        Reset Wachtwoord
+                    </button>
+                </div>
+
+                <div class="text-center p-t-20">
+                    <span class="txt1">
+                        Toch niet vergeten?
+                    </span>
+                    <a class="txt2" href="{{ route('login') }}">
+                        Inloggen!
+                    </a>
+                </div>
+                
+            </form>
         </div>
     </div>
 </div>
