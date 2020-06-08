@@ -5,10 +5,10 @@
     <div class="container-login100" style="background-image: url('/img/bg_1.png');">
         <div class="wrap-login100 p-t-30 p-b-50">
             <span class="login100-form-title p-b-41">
-                Binnentuin Adminpanel
+                BinnenTuin Adminpanel
             </span>
             <form class="login100-form p-b-33 p-t-5" method="POST"  action="{{ route('login') }}">
-                @csrf
+                {{ csrf_field() }}
 
                 @if($errors->any())
                 <div class="text-center p-t-20 m-l-20 m-r-20">
