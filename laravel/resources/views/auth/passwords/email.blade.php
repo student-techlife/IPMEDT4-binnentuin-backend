@@ -1,50 +1,51 @@
-@extends('layouts.app')
+@extends('layouts.app', ['class' => 'off-canvas-sidebar', 'activePage' => 'email', 'title' => __('Material Dashboard')])
 
 @section('content')
-<div class="limiter">
-    <div class="container-login100" style="background-image: url('/img/bg_1.png');">
-        <div class="wrap-login100 p-t-30 p-b-50">
-            <span class="login100-form-title p-b-41">
-                Wachtwoord vergeten
-            </span>
-            <form class="login100-form p-b-33 p-t-5" method="POST"  action="{{ route('password.email') }}">
-                @csrf
+<div class="container" style="height: auto;">
+  <div class="row align-items-center">
+    <div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
+      <form class="form" method="POST" action="{{ route('password.email') }}">
+        @csrf
 
-                @if($errors->any())
-                <div class="text-center p-t-20 m-l-20 m-r-20">
-                    <h4 style="color:red;">{{$errors->first()}}</h4>
-                </div>
-                @endif
-
-                @if (session('status'))
-                <div class="text-center p-t-20 m-l-20 m-r-20">
-                    <h4 style="color:green;">{{ session('status') }}</h4>
-                </div>
-                @endif
-
-                <div class="wrap-input100" data-validate = "Vul uw e-mail in">
-                    <input class="input100" type="email" value="{{ old('email') }}" id="email" required="" oninvalid="this.setCustomValidity('E-mail is vereist')"
-                    oninput="setCustomValidity('')" name="email" placeholder="E-mail">
-                    <span class="focus-input100" data-placeholder="&#xe82a;"></span>
-                </div>
-
-                <div class="container-login100-form-btn m-t-32">
-                    <button class="login100-form-btn" type="submit">
-                        Verstuur Aanvraag
+        <div class="card card-login card-hidden mb-3">
+          <div class="card-header card-header-primary text-center">
+            <h4 class="card-title"><strong>{{ __('Forgot Password') }}</strong></h4>
+          </div>
+          <div class="card-body">
+            @if (session('status'))
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <i class="material-icons">close</i>
                     </button>
+                    <span>{{ session('status') }}</span>
+                  </div>
                 </div>
-
-                <div class="text-center p-t-20">
-                    <span class="txt1">
-                        Toch niet vergeten?
-                    </span>
-                    <a class="txt2" href="{{ url('/') }}">
-                        Inloggen!
-                    </a>
+              </div>
+            @endif
+            <div class="bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">email</i>
+                  </span>
                 </div>
-                
-            </form>
+                <input type="email" name="email" class="form-control" placeholder="{{ __('Email...') }}" value="{{ old('email') }}" required>
+              </div>
+              @if ($errors->has('email'))
+                <div id="email-error" class="error text-danger pl-3" for="email" style="display: block;">
+                  <strong>{{ $errors->first('email') }}</strong>
+                </div>
+              @endif
+            </div>
+          </div>
+          <div class="card-footer justify-content-center">
+            <button type="submit" class="btn btn-primary btn-link btn-lg">{{ __('Send Password Reset Link') }}</button>
+          </div>
         </div>
+      </form>
     </div>
+  </div>
 </div>
 @endsection
