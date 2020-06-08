@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Na zwoegen en zweten kan je eindeijk inloggen!
                 </div>
             </div>
         </div>
