@@ -4,7 +4,7 @@
 <div class="container" style="height: auto;">
   <div class="row align-items-center">
     <div class="col-md-9 ml-auto mr-auto mb-3 text-center">
-      <h3>{{ __('Binnentuinapp') }} </h3>
+      <h3 style="font-weight: bold;">{{ __('Binnentuinapp') }} </h3>
     </div>
     <div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
       <form class="form" method="POST" action="{{ route('login') }}">
@@ -22,7 +22,7 @@
                     <i class="material-icons">email</i>
                   </span>
                 </div>
-                <input type="text" name="username" class="form-control" placeholder="{{ __('Login') }}" value="{{ old('email') }}" required="" oninvalid="this.setCustomValidity('Vul alstublieft een geldige login in')"
+                <input type="text" name="username" class="form-control" placeholder="{{ __('Gebruikersnaam of e-mail') }}" value="{{ old('email') }}" required="" oninvalid="this.setCustomValidity('Vul alstublieft een geldige login in')"
                 oninput="setCustomValidity('')">
               </div>
               @if ($errors->has('email'))

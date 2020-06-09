@@ -9,7 +9,7 @@
 
         <div class="card card-login card-hidden mb-3">
           <div class="card-header card-header-primary text-center">
-            <h4 class="card-title"><strong>{{ __('Forgot Password') }}</strong></h4>
+            <h4 class="card-title"><strong>{{ __('Wachtwoord Vergeten') }}</strong></h4>
           </div>
           <div class="card-body">
             @if (session('status'))
@@ -17,7 +17,7 @@
                 <div class="col-sm-12">
                   <div class="alert alert-success">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <i class="material-icons">close</i>
+                      <i class="material-icons">sluiten</i>
                     </button>
                     <span>{{ session('status') }}</span>
                   </div>
@@ -31,7 +31,7 @@
                     <i class="material-icons">email</i>
                   </span>
                 </div>
-                <input type="email" name="email" class="form-control" placeholder="{{ __('Email...') }}" value="{{ old('email') }}" required>
+                <input type="email" name="email" class="form-control" placeholder="{{ __('E-mail') }}" value="{{ old('email') }}" required>
               </div>
               @if ($errors->has('email'))
                 <div id="email-error" class="error text-danger pl-3" for="email" style="display: block;">
@@ -41,10 +41,17 @@
             </div>
           </div>
           <div class="card-footer justify-content-center">
-            <button type="submit" class="btn btn-primary btn-link btn-lg">{{ __('Send Password Reset Link') }}</button>
+            <button type="submit" class="btn btn-primary btn-link btn-lg">{{ __('Verstuur Reset Link') }}</button>
           </div>
         </div>
       </form>
+      <div class="row">
+        <div class="col-6">
+          <a href="{{ route('login') }}" class="text-light">
+              <small>{{ __('Wachtwoord niet vergeten?') }}</small>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
