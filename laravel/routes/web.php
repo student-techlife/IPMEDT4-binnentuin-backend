@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('/openingstijden_binnentuin','BinnentuinController@index'); // openingstijden api route
+Route::get('/openingstijden_theroof','TheRoofController@index'); // openingstijden api route
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
@@ -57,4 +60,3 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });
-
