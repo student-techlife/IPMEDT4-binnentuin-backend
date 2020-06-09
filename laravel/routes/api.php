@@ -19,3 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/test', 'TestController@index');
+
+Route::get('/openingstijden_binnentuin','BinnentuinController@index'); // tijdelijke openingstijden binnentuin
+
+Route::get('/openingstijden_theroof','TheRoofController@index'); // tijdelijke openingstijden the roof

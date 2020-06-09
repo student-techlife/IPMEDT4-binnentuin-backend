@@ -17,9 +17,6 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/openingstijden_binnentuin','BinnentuinController@index'); // openingstijden api route
-Route::get('/openingstijden_theroof','TheRoofController@index'); // openingstijden api route
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
