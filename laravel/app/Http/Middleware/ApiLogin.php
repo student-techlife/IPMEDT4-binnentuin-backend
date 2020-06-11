@@ -22,7 +22,7 @@ class ApiLogin
             ->first();
 
         $request->merge([
-            'grand_type' => 'password',
+            'grant_type' => 'password',
             'client_id' => 2,
             'client_secret' => $secret,
         ]);
