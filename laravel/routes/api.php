@@ -19,6 +19,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/openingstijden_binnentuin','BinnentuinController@index'); // tijdelijke openingstijden binnentuin
+
+Route::get('/openingstijden_theroof','TheRoofController@index'); // tijdelijke openingstijden the roof
+
 Route::post('login', [AccessTokenController::class, 'issuetoken'])
     ->middleware(['api-login', 'throttle']);
 
