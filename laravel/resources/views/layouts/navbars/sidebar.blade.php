@@ -1,4 +1,4 @@
-<div class="sidebar" data-color="green" data-background-color="white" data-image="{{ asset('material') }}/img/login.jpg">
+<div class="sidebar" data-color="green" data-background-color="white" data-image="{{ secure_asset('material') }}/img/login.jpg">
   <div class="logo">
     <a class="simple-text logo-normal">
       {{ __('Binnentuinapp') }}
