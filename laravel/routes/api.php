@@ -15,15 +15,19 @@ use Laravel\Passport\Http\Controllers\AccessTokenController;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
+// Restaurant
 Route::get('/openingstijden_binnentuin','BinnentuinController@index'); // tijdelijke openingstijden binnentuin
-
 Route::get('/openingstijden_theroof','TheRoofController@index'); // tijdelijke openingstijden the roof
 
-Route::post('login', [AccessTokenController::class, 'issuetoken'])
+// Auth
+Route::post('/login', [AccessTokenController::class, 'issuetoken'])
     ->middleware(['api-login', 'throttle']);
+Route::post('/register', 'Api\AuthController@register');
+Route::post('/v2/login', 'Api\AuthController@login'); // Test
 
+// Test functie
 Route::get('test', 'TestController@index');
