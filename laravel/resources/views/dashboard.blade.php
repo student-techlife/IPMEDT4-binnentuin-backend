@@ -123,6 +123,115 @@
           </div>
         </div>
       </div>
+
+      <!-- START OPENINGSTIJDEN -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-tabs card-header-primary">
+              <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                  <span class="nav-tabs-title">Openingstijden:</span>
+                  <ul class="nav nav-tabs" data-tabs="tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#binnentuin" data-toggle="tab">
+                        <i class="material-icons">house</i> Binnentuin
+                        <div class="ripple-container"></div>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#theroof" data-toggle="tab">
+                        <i class="material-icons">roofing</i> The Roof
+                        <div class="ripple-container"></div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="tab-content">
+                <div class="tab-pane active" id="binnentuin">
+
+                  <form method="post" action="{{ route('home.update') }}" autocomplete="off" class="form-horizontal">
+                    @csrf
+                    {{ csrf_field() }}
+                    {{method_field('PATCH')}}
+                    @php( $binnentuin = \App\Binnentuin::all() )
+
+
+                      <div class="card-body ">
+
+                        @foreach($binnentuin as $dag)
+                          <div class="form-row">
+                            <div class="col">
+                              <label class="col-form-label">{{ $dag->dag_van_week }}</label>
+                            </div>
+                            <div class="col">
+                              <input type="text" class="form-control" name="openingstijd" placeholder="{{ $dag->openingstijd }}" value={{ $dag->openingstijd }}>
+                            </div>
+                            <div class="col">
+                              <input type="text" class="form-control" name="sluitingstijd" placeholder="{{ $dag->sluitingstijd }}" value={{ $dag->sluitingstijd }}>
+                            </div>
+                          </div>
+                        @endforeach
+
+                      </div>
+
+
+                      <div class="card-footer ml-auto mr-auto">
+                        <button type="submit" class="btn btn-primary">Aanpassen</button>
+                      </div>
+                  </form>
+
+
+                </div>
+                <div class="tab-pane" id="theroof">
+
+                  <form method="post" action="{{ route('home.update') }}" autocomplete="off" class="form-horizontal">
+                    @csrf
+                    {{ csrf_field() }}
+                    {{method_field('PATCH')}}
+                    @php( $theroof = \App\TheRoof::all() )
+
+
+                      <div class="card-body ">
+
+                        @foreach($theroof as $dag2)
+                          <div class="form-row">
+                            <div class="col">
+                              <label class="col-form-label">{{ $dag2->dag_van_week }}</label>
+                            </div>
+                            <div class="col">
+                              <input type="text" class="form-control" name="openingstijd" placeholder="{{ $dag2->openingstijd }}" value={{ $dag2->openingstijd }}>
+                            </div>
+                            <div class="col">
+                              <input type="text" class="form-control" name="sluitingstijd" placeholder="{{ $dag2->sluitingstijd }}" value={{ $dag2->sluitingstijd }}>
+                            </div>
+                          </div>
+                        @endforeach
+
+                      </div>
+
+
+                      <div class="card-footer ml-auto mr-auto">
+                        <button type="submit" class="btn btn-primary">Aanpassen</button>
+                      </div>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END OPENINGSTIJDEN -->
+
+
+
+
+
+
       <div class="row">
         <div class="col-lg-6 col-md-12">
           <div class="card">

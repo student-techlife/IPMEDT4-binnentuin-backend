@@ -12,4 +12,19 @@ class BinnentuinController extends Controller
     public function index(){
       return Binnentuin::get()->all();
     }
+
+    public function update(Request $request, $dag){
+      try {
+        Binnentuin::where("dag_van_week", "=", $dag)
+        ->update([
+          'openingstijd' =>$request->input('openingstijd'),
+          'sluitingstijd' =>$request->input('sluitingstijd')
+        ]);
+        return redirect("/home");
+      }
+
+      catch(Exception $e){
+        return redirect("/profile");
+      }
+    }
 }
