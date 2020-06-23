@@ -126,12 +126,12 @@
 
       <!-- START OPENINGSTIJDEN -->
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
           <div class="card">
             <div class="card-header card-header-tabs card-header-primary">
               <div class="nav-tabs-navigation">
                 <div class="nav-tabs-wrapper">
-                  <span class="nav-tabs-title">Openingstijden:</span>
+                  <span class="nav-tabs-title">Openingstijden aanpassen:</span>
                   <ul class="nav nav-tabs" data-tabs="tabs">
                     <li class="nav-item">
                       <a class="nav-link active" href="#binnentuin" data-toggle="tab">
@@ -149,44 +149,48 @@
                 </div>
               </div>
             </div>
+
             <div class="card-body">
               <div class="tab-content">
-                <div class="tab-pane active" id="binnentuin">
 
+                <div class="tab-pane active" id="binnentuin">
                   <form method="post" action="{{ route('home.update') }}" autocomplete="off" class="form-horizontal">
                     @csrf
                     {{ csrf_field() }}
                     {{method_field('PATCH')}}
 
 
+                      <div class="form-row">
+                        <div class="col">
+                          <label for="dag_van_week">Dag:</label>
+                          <select class="form-control" name="dag_van_week">
+                            @foreach($binnentuin as $dag)
+                              <option value={{ $dag->dag_van_week}}>{{ $dag->dag_van_week}}</option>
+                            @endforeach
+                          </select>
+                        </div>
 
-                      <div class="card-body ">
+                        <div class="col">
+                          <label class="col-form-label" for="openingstijd">Openingstijd:</label>
+                          <input class="form-control" type="text" name="openingstijd" value="">
+                        </div>
 
-                        <select name="dag_van_week">
-                          @foreach($binnentuin as $dag)
-                            <option value={{ $dag->dag_van_week}}>{{ $dag->dag_van_week}}</option>
-                          @endforeach
-                        </select>
-
-                        <label for="openingstijd">Openingstijd:</label>
-                        <input type="text" name="openingstijd" value="">
-
-                        <label for="sluitingstijd">Sluitingstijd:</label>
-                        <input type="text" name="sluitingstijd" value="">
-
-
+                        <div class="col">
+                          <label class="col-form-label" for="sluitingstijd">Sluitingstijd:</label>
+                          <input class="form-control" type="text" name="sluitingstijd" value="">
+                        </div>
                       </div>
+
+
 
 
                       <div class="card-footer ml-auto mr-auto">
                         <button type="submit" class="btn btn-primary">Aanpassen</button>
                       </div>
                   </form>
-
-
                 </div>
-                <div class="tab-pane" id="theroof">
 
+                <div class="tab-pane" id="theroof">
                   <form method="post" action="{{ route('home.update') }}" autocomplete="off" class="form-horizontal">
                     @csrf
                     {{ csrf_field() }}
