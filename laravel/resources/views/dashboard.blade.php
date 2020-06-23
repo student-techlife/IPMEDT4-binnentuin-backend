@@ -124,7 +124,8 @@
         </div>
       </div>
 
-      <!-- START OPENINGSTIJDEN -->
+      <!-- START OPENINGSTIJDEN ROW -->
+      <!-- START OPENINGSTIJDEN AANPASSEN-->
       <div class="row">
         <div class="col-md-6">
           <div class="card">
@@ -172,12 +173,12 @@
 
                         <div class="col">
                           <label class="col-form-label" for="openingstijd">Openingstijd:</label>
-                          <input class="form-control" type="text" name="openingstijd" value="">
+                          <input class="form-control" type="text" name="openingstijd" placeholder="14:00" required>
                         </div>
 
                         <div class="col">
                           <label class="col-form-label" for="sluitingstijd">Sluitingstijd:</label>
-                          <input class="form-control" type="text" name="sluitingstijd" value="">
+                          <input class="form-control" type="text" name="sluitingstijd" placeholder="21:00" required>
                         </div>
                       </div>
 
@@ -195,26 +196,27 @@
                     @csrf
                     {{ csrf_field() }}
                     {{method_field('PATCH')}}
-                    @php( $theroof = \App\TheRoof::all() )
 
-
-                      <div class="card-body ">
-
-                        @foreach($theroof as $dag2)
-                          <div class="form-row">
-                            <div class="col">
-                              <label class="col-form-label">{{ $dag2->dag_van_week }}</label>
-                            </div>
-                            <div class="col">
-                              <input type="text" class="form-control" name="openingstijd" placeholder="{{ $dag2->openingstijd }}" value={{ $dag2->openingstijd }}>
-                            </div>
-                            <div class="col">
-                              <input type="text" class="form-control" name="sluitingstijd" placeholder="{{ $dag2->sluitingstijd }}" value={{ $dag2->sluitingstijd }}>
-                            </div>
-                          </div>
-                        @endforeach
-
+                    <div class="form-row">
+                      <div class="col">
+                        <label for="dag_van_week">Dag:</label>
+                        <select class="form-control" name="dag_van_week">
+                          @foreach($theroof as $dag)
+                            <option value={{ $dag->dag_van_week}}>{{ $dag->dag_van_week}}</option>
+                          @endforeach
+                        </select>
                       </div>
+
+                      <div class="col">
+                        <label class="col-form-label" for="openingstijd">Openingstijd:</label>
+                        <input class="form-control" type="text" name="openingstijd" placeholder="14:00" required>
+                      </div>
+
+                      <div class="col">
+                        <label class="col-form-label" for="sluitingstijd">Sluitingstijd:</label>
+                        <input class="form-control" type="text" name="sluitingstijd" placeholder="21:00" required>
+                      </div>
+                    </div>
 
 
                       <div class="card-footer ml-auto mr-auto">
@@ -227,13 +229,94 @@
             </div>
           </div>
         </div>
+      <!-- END OPENINGSTIJDEN AANPASSEN-->
+
+      <!-- START OPENINGSTIJDEN SCHEMA -->
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header card-header-tabs card-header-primary">
+              <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                  <span class="nav-tabs-title">Huidige openingstijden:</span>
+                  <ul class="nav nav-tabs" data-tabs="tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#binnentuinOT" data-toggle="tab">
+                        <i class="material-icons">house</i> Binnentuin
+                        <div class="ripple-container"></div>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#theroofOT" data-toggle="tab">
+                        <i class="material-icons">roofing</i> The Roof
+                        <div class="ripple-container"></div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="tab-content">
+                <div class="tab-pane active" id="binnentuinOT">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <th>
+                          Dag
+                        </th>
+                        <th>
+                          Openingstijd
+                        </th>
+                        <th>
+                          Sluitingstijd
+                        </th>
+                      </thead>
+                      <tbody>
+                        @foreach($binnentuin as $rij)
+                          <tr>
+                            <td> {{ $rij->dag_van_week}} </td>
+                            <td> {{ $rij->openingstijd}} </td>
+                            <td> {{ $rij->sluitingstijd}} </td>
+                          </tr>
+                        @endforeach
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="tab-pane" id="theroofOT">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <th>
+                          Dag
+                        </th>
+                        <th>
+                          Openingstijd
+                        </th>
+                        <th>
+                          Sluitingstijd
+                        </th>
+                      </thead>
+                      <tbody>
+                        @foreach($theroof as $rij)
+                          <tr>
+                            <td> {{ $rij->dag_van_week}} </td>
+                            <td> {{ $rij->openingstijd}} </td>
+                            <td> {{ $rij->sluitingstijd}} </td>
+                          </tr>
+                        @endforeach
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- END OPENINGSTIJDEN -->
-
-
-
-
-
+      <!-- END OPENINGSTIJDEN SCHEMA -->
+      <!-- END OPENINGSTIJDEN ROW -->
 
       <div class="row">
         <div class="col-lg-6 col-md-12">
