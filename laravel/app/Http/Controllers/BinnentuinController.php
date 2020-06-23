@@ -21,18 +21,6 @@ class BinnentuinController extends Controller
 
       ]);
 
-      return redirect('/profile');
-      // try {
-      //   Binnentuin::where("dag_van_week", "=", $dag)
-      //   ->update([
-      //     'openingstijd' =>$request->input('openingstijd'),
-      //     'sluitingstijd' =>$request->input('sluitingstijd')
-      //   ]);
-      //   return redirect("/home");
-      // }
-      //
-      // catch(Exception $e){
-      //   return redirect("/profile");
-      // }
+      return back()->withStatus(__('Openingstijden succesvol aangepast'));
     }
 }
