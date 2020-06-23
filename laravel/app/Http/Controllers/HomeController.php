@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Binnentuin;
 
 class HomeController extends Controller
 {
@@ -21,6 +22,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        return view('dashboard')->with('binnentuin', Binnentuin::all());
     }
 }

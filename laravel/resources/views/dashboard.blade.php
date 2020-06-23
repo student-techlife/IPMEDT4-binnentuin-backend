@@ -157,24 +157,23 @@
                     @csrf
                     {{ csrf_field() }}
                     {{method_field('PATCH')}}
-                    @php( $binnentuin = \App\Binnentuin::all() )
+
 
 
                       <div class="card-body ">
 
-                        @foreach($binnentuin as $dag)
-                          <div class="form-row">
-                            <div class="col">
-                              <label class="col-form-label">{{ $dag->dag_van_week }}</label>
-                            </div>
-                            <div class="col">
-                              <input type="text" class="form-control" name="openingstijd" placeholder="{{ $dag->openingstijd }}" value={{ $dag->openingstijd }}>
-                            </div>
-                            <div class="col">
-                              <input type="text" class="form-control" name="sluitingstijd" placeholder="{{ $dag->sluitingstijd }}" value={{ $dag->sluitingstijd }}>
-                            </div>
-                          </div>
-                        @endforeach
+                        <select name="dag_van_week">
+                          @foreach($binnentuin as $dag)
+                            <option value={{ $dag->dag_van_week}}>{{ $dag->dag_van_week}}</option>
+                          @endforeach
+                        </select>
+
+                        <label for="openingstijd">Openingstijd:</label>
+                        <input type="text" name="openingstijd" value="">
+
+                        <label for="sluitingstijd">Sluitingstijd:</label>
+                        <input type="text" name="sluitingstijd" value="">
+
 
                       </div>
 
