@@ -23,6 +23,8 @@ use Laravel\Passport\Http\Controllers\AccessTokenController;
 Route::get('/openingstijden_binnentuin','BinnentuinController@index'); // tijdelijke openingstijden binnentuin
 Route::get('/openingstijden_theroof','TheRoofController@index'); // tijdelijke openingstijden the roof
 
+Route::get('/producten','ProductenController@index'); // Producten van de menu pagina
+
 // Auth
 Route::post('/login', [AccessTokenController::class, 'issuetoken'])
     ->middleware(['api-login', 'throttle']);
