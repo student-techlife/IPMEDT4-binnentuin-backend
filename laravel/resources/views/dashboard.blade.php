@@ -153,7 +153,6 @@
 
             <div class="card-body">
               <div class="tab-content">
-
                 <div class="tab-pane active" id="binnentuin">
                   @if (session('status'))
                     <div class="row">
@@ -167,13 +166,10 @@
                       </div>
                     </div>
                   @endif
-
                   <form method="post" action="{{ route('home.update') }}" autocomplete="off" class="form-horizontal">
                     @csrf
                     {{ csrf_field() }}
                     {{method_field('PATCH')}}
-
-
                       <div class="form-row">
                         <div class="col">
                           <label for="dag_van_week">Dag:</label>
@@ -183,46 +179,25 @@
                             @endforeach
                           </select>
                         </div>
-
                         <div class="col">
                           <label class="col-form-label" for="openingstijd">Openingstijd:</label>
                           <input class="form-control" type="text" name="openingstijd" placeholder="14:00" required>
                         </div>
-
                         <div class="col">
                           <label class="col-form-label" for="sluitingstijd">Sluitingstijd:</label>
                           <input class="form-control" type="text" name="sluitingstijd" placeholder="21:00" required>
                         </div>
                       </div>
-
-
-
-
                       <div class="card-footer ml-auto mr-auto">
                         <button type="submit" class="btn btn-primary">Aanpassen</button>
                       </div>
                   </form>
                 </div>
-
                 <div class="tab-pane" id="theroof">
-                  @if (session('status'))
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <div class="alert alert-success">
-                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <i class="material-icons">close</i>
-                          </button>
-                          <span>{{ session('status') }}</span>
-                        </div>
-                      </div>
-                    </div>
-                  @endif
-                  
                   <form method="post" action="{{ route('home.update') }}" autocomplete="off" class="form-horizontal">
                     @csrf
                     {{ csrf_field() }}
                     {{method_field('PATCH')}}
-
                     <div class="form-row">
                       <div class="col">
                         <label for="dag_van_week">Dag:</label>
@@ -232,24 +207,19 @@
                           @endforeach
                         </select>
                       </div>
-
                       <div class="col">
                         <label class="col-form-label" for="openingstijd">Openingstijd:</label>
                         <input class="form-control" type="text" name="openingstijd" placeholder="14:00" required>
                       </div>
-
                       <div class="col">
                         <label class="col-form-label" for="sluitingstijd">Sluitingstijd:</label>
                         <input class="form-control" type="text" name="sluitingstijd" placeholder="21:00" required>
                       </div>
                     </div>
-
-
                       <div class="card-footer ml-auto mr-auto">
                         <button type="submit" class="btn btn-primary">Aanpassen</button>
                       </div>
                   </form>
-
                 </div>
               </div>
             </div>
