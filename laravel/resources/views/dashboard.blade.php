@@ -166,6 +166,7 @@
                       </div>
                     </div>
                   @endif
+                  <p class="card-category">Hier kunt u de openingstijden van de Binnentuin aanpassen. Wanneer u de locatie voor een of meerdere dagen wilt sluiten hoeft u geen openings- en sluitingstijd in te vullen. Wanneer u de locatie vervolgens wilt openen moet u wel de openingstijden invullen.</p>
                   <form method="post" action="{{ route('home.update') }}" autocomplete="off" class="form-horizontal">
                     @csrf
                     {{ csrf_field() }}
