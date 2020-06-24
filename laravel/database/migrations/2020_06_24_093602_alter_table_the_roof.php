@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddIdToTheroofTable extends Migration
+class AlterTableTheRoof extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class AddIdToTheroofTable extends Migration
      */
     public function up()
     {
+        //
         Schema::table('theroof', function (Blueprint $table) {
-            //
             $table->bigIncrements('id');
+            $table->string('openingstijd')->change();
+            $table->string('sluitingstijd')->change();
+            $table->boolean('status')->default(0);
         });
     }
 
@@ -26,6 +29,7 @@ class AddIdToTheroofTable extends Migration
      */
     public function down()
     {
+        //
         Schema::table('theroof', function (Blueprint $table) {
             //
         });

@@ -169,8 +169,7 @@
                   <p class="card-category">Hier kunt u de openingstijden van de Binnentuin aanpassen. Wanneer u de locatie voor een of meerdere dagen wilt sluiten hoeft u geen openings- en sluitingstijd in te vullen. Wanneer u de locatie vervolgens wilt openen moet u wel de openingstijden invullen.</p>
                   <form method="post" action="{{ route('home.update') }}" autocomplete="off" class="form-horizontal">
                     @csrf
-                    {{ csrf_field() }}
-                    {{method_field('PATCH')}}
+                    @method('PATCH')
                       <div class="form-row">
                         <div class="col">
                           <label for="dag_van_week">Dag:</label>
@@ -202,10 +201,10 @@
                   </form>
                 </div>
                 <div class="tab-pane" id="theroof">
+                  <p class="card-category">Hier kunt u de openingstijden van The Roof aanpassen. Wanneer u de locatie voor een of meerdere dagen wilt sluiten hoeft u geen openings- en sluitingstijd in te vullen. Wanneer u de locatie vervolgens wilt openen moet u wel de openingstijden invullen.</p>
                   <form method="post" action="{{ route('home.update') }}" autocomplete="off" class="form-horizontal">
                     @csrf
-                    {{ csrf_field() }}
-                    {{method_field('PATCH')}}
+                    @method('PATCH')
                     <div class="form-row">
                       <div class="col">
                         <label for="dag_van_week">Dag:</label>
@@ -213,6 +212,13 @@
                           @foreach($theroof as $dag)
                             <option value={{ $dag->dag_van_week}}>{{ $dag->dag_van_week}}</option>
                           @endforeach
+                        </select>
+                      </div>
+                      <div class="col">
+                        <label for="status">Status:</label>
+                        <select class="form-control" name="status">
+                          <option value="Open">Open</option>
+                          <option value="Gesloten">Gesloten</option>
                         </select>
                       </div>
                       <div class="col">
@@ -266,20 +272,22 @@
                   <div class="table-responsive">
                     <table class="table">
                       <thead class=" text-primary">
-                        <th>
-                          Dag
-                        </th>
-                        <th>
-                          Openingstijd
-                        </th>
-                        <th>
-                          Sluitingstijd
-                        </th>
+                        <th>Dag</th>
+                        <th>Status</th>
+                        <th>Openingstijd</th>
+                        <th>Sluitingstijd</th>
                       </thead>
                       <tbody>
                         @foreach($binnentuin as $rij)
                           <tr>
                             <td> {{ $rij->dag_van_week}} </td>
+                            <td>
+                              @if($rij->status==0)
+                                Gesloten
+                                @else
+                                  Open
+                              @endif
+                            </td>
                             <td> {{ $rij->openingstijd}} </td>
                             <td> {{ $rij->sluitingstijd}} </td>
                           </tr>
@@ -292,20 +300,22 @@
                   <div class="table-responsive">
                     <table class="table">
                       <thead class=" text-primary">
-                        <th>
-                          Dag
-                        </th>
-                        <th>
-                          Openingstijd
-                        </th>
-                        <th>
-                          Sluitingstijd
-                        </th>
+                        <th>Dag</th>
+                        <th>Status</th>
+                        <th>Openingstijd</th>
+                        <th>Sluitingstijd</th>
                       </thead>
                       <tbody>
                         @foreach($theroof as $rij)
                           <tr>
                             <td> {{ $rij->dag_van_week}} </td>
+                            <td>
+                              @if($rij->status==0)
+                                Gesloten
+                                @else
+                                  Open
+                              @endif
+                            </td>
                             <td> {{ $rij->openingstijd}} </td>
                             <td> {{ $rij->sluitingstijd}} </td>
                           </tr>

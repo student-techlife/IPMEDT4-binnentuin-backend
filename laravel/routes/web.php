@@ -21,9 +21,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
-
-// Route::get('/home', ['as' => 'home.change', 'uses' => 'BinnentuinController@change']);
-Route::patch('/home', ['as' => 'home.update', 'uses' => 'BinnentuinController@update']);
+Route::patch('/home/update', ['as' => 'home.update', 'uses' => 'BinnentuinController@update']);
+// Route::patch('/home/update', ['as' => 'home.update2', 'uses' => 'TheRoofController@update']);
 
 
 Route::group(['middleware' => 'auth'], function () {
