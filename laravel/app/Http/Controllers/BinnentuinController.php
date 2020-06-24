@@ -14,13 +14,24 @@ class BinnentuinController extends Controller
     }
 
     public function update(Request $request){
-      $binnentuin = Binnentuin::where('dag_van_week', '=', $request->input('dag_van_week'))->update([
 
-        'openingstijd' => $request->input('openingstijd'),
-        'sluitingstijd' => $request->input('sluitingstijd')
+        if($request->input('status')=='Gesloten'){
+          $binnentuin = Binnentuin::where('dag_van_week', '=', $request->input('dag_van_week'))->update([
+            'status' => $request->input('status')=='Gesloten' ? 0:1
+            ]);
+           return back()->withStatus(__('De status is veranderd naar: Gesloten'));
 
-      ]);
 
-      return back()->withStatus(__('Openingstijden succesvol aangepast'));
+        }else{
+
+          $binnentuin = Binnentuin::where('dag_van_week', '=', $request->input('dag_van_week'))->update([
+          'openingstijd' => $request->input('openingstijd'),
+          'sluitingstijd' => $request->input('sluitingstijd'),
+          'status' => $request->input('status')=='Open' ? 1:0
+
+          ]);
+          return back()->withStatus(__('Openingstijden succesvol aangepast'));
+          }
+
     }
 }

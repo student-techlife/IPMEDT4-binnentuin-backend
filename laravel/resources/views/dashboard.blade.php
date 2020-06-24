@@ -180,12 +180,19 @@
                           </select>
                         </div>
                         <div class="col">
+                          <label for="status">Status:</label>
+                          <select class="form-control" name="status">
+                            <option value="Open">Open</option>
+                            <option value="Gesloten">Gesloten</option>
+                          </select>
+                        </div>
+                        <div class="col">
                           <label class="col-form-label" for="openingstijd">Openingstijd:</label>
-                          <input class="form-control" type="text" name="openingstijd" placeholder="14:00" required>
+                          <input class="form-control" type="text" name="openingstijd" placeholder="14:00">
                         </div>
                         <div class="col">
                           <label class="col-form-label" for="sluitingstijd">Sluitingstijd:</label>
-                          <input class="form-control" type="text" name="sluitingstijd" placeholder="21:00" required>
+                          <input class="form-control" type="text" name="sluitingstijd" placeholder="21:00">
                         </div>
                       </div>
                       <div class="card-footer ml-auto mr-auto">
