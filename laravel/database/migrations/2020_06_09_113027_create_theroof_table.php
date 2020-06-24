@@ -14,9 +14,11 @@ class CreateTheroofTable extends Migration
     public function up()
     {
         Schema::create('theroof', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('dag_van_week')->unique();
-            $table->time('openingstijd');
-            $table->time('sluitingstijd');
+            $table->string('openingstijd');
+            $table->string('sluitingstijd');
+            $table->boolean('status')->default(0);
         });
     }
 
