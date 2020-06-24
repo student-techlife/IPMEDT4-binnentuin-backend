@@ -24,6 +24,7 @@ Route::get('/openingstijden_binnentuin','BinnentuinController@index'); // tijdel
 Route::get('/openingstijden_theroof','TheRoofController@index'); // tijdelijke openingstijden the roof
 
 Route::get('/producten','ProductenController@index'); // Producten van de menu pagina
+Route::get('/producten/{categorie}', 'ProductenController@show'); // Bepaalde categorie van producten
 
 // Auth
 Route::post('/login', [AccessTokenController::class, 'issuetoken'])

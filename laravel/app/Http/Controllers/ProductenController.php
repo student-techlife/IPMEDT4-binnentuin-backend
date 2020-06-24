@@ -12,4 +12,8 @@ class ProductenController extends Controller
     public function index(){
       return Producten::get()->all();
     }
+
+    public function show($categorie) {
+      return Producten::where('categorie','=',$categorie)->get();
+    }
 }
