@@ -166,6 +166,18 @@
                       </div>
                     </div>
                   @endif
+                  @if (session('error'))
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="alert alert-danger">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <i class="material-icons">close</i>
+                          </button>
+                          <span>{{ session('error') }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  @endif
                   <p class="card-category">Hier kunt u de openingstijden van de Binnentuin aanpassen. Wanneer u de locatie voor een of meerdere dagen wilt sluiten hoeft u geen openings- en sluitingstijd in te vullen. Wanneer u de locatie vervolgens wilt openen moet u wel de openingstijden invullen.</p>
                   <form method="post" action="{{ route('home.update') }}" autocomplete="off" class="form-horizontal">
                     @csrf
@@ -173,7 +185,7 @@
                       <div class="form-row">
                         <div class="col">
                           <label for="dag_van_week">Dag:</label>
-                          <select class="form-control" name="dag_van_week">
+                          <select class="form-control" name="dag_van_week1">
                             @foreach($binnentuin as $dag)
                               <option value={{ $dag->dag_van_week}}>{{ $dag->dag_van_week}}</option>
                             @endforeach
@@ -223,11 +235,11 @@
                       </div>
                       <div class="col">
                         <label class="col-form-label" for="openingstijd">Openingstijd:</label>
-                        <input class="form-control" type="text" name="openingstijd" placeholder="14:00" required>
+                        <input class="form-control" type="text" name="openingstijd" placeholder="14:00">
                       </div>
                       <div class="col">
                         <label class="col-form-label" for="sluitingstijd">Sluitingstijd:</label>
-                        <input class="form-control" type="text" name="sluitingstijd" placeholder="21:00" required>
+                        <input class="form-control" type="text" name="sluitingstijd" placeholder="21:00">
                       </div>
                     </div>
                       <div class="card-footer ml-auto mr-auto">
