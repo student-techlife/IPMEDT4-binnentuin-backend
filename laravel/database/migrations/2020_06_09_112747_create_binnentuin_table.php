@@ -14,7 +14,7 @@ class CreateBinnentuinTable extends Migration
     public function up()
     {
         Schema::create('binnentuin', function (Blueprint $table) {
-          $table->bigIncrements('id');
+            $table->bigIncrements('id');
             $table->string('dag_van_week')->unique();
             $table->string('openingstijd');
             $table->string('sluitingstijd');
