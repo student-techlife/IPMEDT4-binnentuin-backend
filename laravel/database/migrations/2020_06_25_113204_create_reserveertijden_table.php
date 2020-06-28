@@ -14,8 +14,10 @@ class CreateReserveertijdenTable extends Migration
     public function up()
     {
         Schema::create('reserveertijden', function (Blueprint $table) {
-          $table->string('tijdsvak');
-          $table->double('maxAantal');
+          $table->bigIncrements('id');
+          $table->string('openingstijd');
+          $table->string('sluitingstijd');
+          $table->integer('max_aantal');
         });
     }
 
