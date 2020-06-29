@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Pretest;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\View\View;
 
 class PretestController extends Controller
@@ -34,11 +36,29 @@ class PretestController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
     {
-        //
+
+        $validation = Validator::make($request->all(),[
+            'persons' => 'required|integer',
+            'reservation_time' => 'required',
+            'symptoms' => 'boolean'
+        ]);
+
+        if ($validation->fails()) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $validation->messages()
+            ])->setStatusCode(400);
+        }
+
+        Pretest::create($request->all());
+
+        return response()->json([
+            'status' => 'succes'
+        ]);
     }
 
     /**
