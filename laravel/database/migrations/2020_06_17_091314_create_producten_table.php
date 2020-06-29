@@ -20,6 +20,7 @@ class CreateProductenTable extends Migration
             $table->string('categorie');
             $table->double('prijs');
             $table->string('locatie');
+            $table->string('img');
         });
     }
 

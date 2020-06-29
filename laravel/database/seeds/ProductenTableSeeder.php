@@ -15,7 +15,7 @@ class ProductenTableSeeder extends Seeder
       DB::table('producten')->insert([
           'id' => 1,
           'naam' => 'Organic yoghurt',
-          'beschrijving' => 'Width granola and jam',
+          'beschrijving' => 'With granola and jam',
           'categorie' => 'snacks',
           'prijs' => 4,
           'locatie' => 'binnentuin'
@@ -33,7 +33,7 @@ class ProductenTableSeeder extends Seeder
       DB::table('producten')->insert([
           'id' => 3,
           'naam' => 'Smoothie',
-          'beschrijving' => 'With forest fruit and yoghurt',
+          'beschrijving' => 'With forest fruits and yoghurt',
           'categorie' => 'snacks',
           'prijs' => 3.50,
           'locatie' => 'binnentuin'
@@ -59,7 +59,7 @@ class ProductenTableSeeder extends Seeder
 
       DB::table('producten')->insert([
           'id' => 6,
-          'naam' => 'Crossant',
+          'naam' => 'Croissant',
           'beschrijving' => 'Freshly baked',
           'categorie' => 'snacks',
           'prijs' => 1,
@@ -68,7 +68,7 @@ class ProductenTableSeeder extends Seeder
 
       DB::table('producten')->insert([
           'id' => 7,
-          'naam' => 'Crossant',
+          'naam' => 'Croissant',
           'beschrijving' => 'Freshly baked with butter & jam',
           'categorie' => 'snacks',
           'prijs' => 1.50,
@@ -79,7 +79,7 @@ class ProductenTableSeeder extends Seeder
       DB::table('producten')->insert([
           'id' => 8,
           'naam' => 'The Goat',
-          'beschrijving' => 'grilled goat cheese wallnuts & honey',
+          'beschrijving' => 'Grilled goat cheese, walnuts & honey',
           'categorie' => 'salads',
           'prijs' => 6,
           'locatie' => 'binnentuin'
@@ -87,8 +87,8 @@ class ProductenTableSeeder extends Seeder
 
       DB::table('producten')->insert([
           'id' => 9,
-          'naam' => 'Calefornia',
-          'beschrijving' => 'Salmon & Avocado',
+          'naam' => 'California',
+          'beschrijving' => 'Salmon & avocado',
           'categorie' => 'salads',
           'prijs' => 6,
           'locatie' => 'binnentuin'
