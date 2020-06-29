@@ -22,7 +22,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::patch('/home/update', ['as' => 'home.update', 'uses' => 'BinnentuinController@update'])->middleware('auth');
-Route::patch('/home/update', ['as' => 'home.update', 'uses' => 'ReserveertijdenController@update'])->middleware('auth');
+Route::patch('/home/aanpassen', ['as' => 'home.aanpassen', 'uses' => 'ReserveertijdenController@update'])->middleware('auth');
 
 
 Route::group(['middleware' => 'auth'], function () {

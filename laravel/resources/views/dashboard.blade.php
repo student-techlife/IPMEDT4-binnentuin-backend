@@ -350,11 +350,8 @@
         <div class="col-md-6">
           <div class="card">
             <div class="card-header card-header-tabs card-header-primary">
-              <div class="nav-tabs-navigation">
-                <div class="nav-tabs-wrapper">
-                  <span class="nav-tabs-title">Maximaal aantal aanpassen:</span>
-                </div>
-              </div>
+              <h4 class="card-title">Maximaal aantal aanpassen</h4>
+              <p class="card-category">Aantal bezoekers tijdens een tijdshift aanpassen</p>
             </div>
 
             <div class="card-body">
@@ -385,13 +382,13 @@
                     </div>
                   @endif
 
-                  <p class="card-category">Hier kunt u de openingstijden van de Binnentuin aanpassen. Wanneer u de locatie voor een of meerdere dagen wilt sluiten hoeft u geen openings- en sluitingstijd in te vullen. Wanneer u de locatie vervolgens wilt openen moet u wel de openingstijden invullen.</p>
-                  <form method="post" action="{{ route('home.update') }}" autocomplete="off" class="form-horizontal">
+                  <p class="card-category">U kunt hier aangeven hoeveel gebruikers er maximaal bij een tijdshift aanwezig mogen zijn. Door de wisselende regels m.b.t. het COVID-19 virus maakt dit systeem het mogelijk om eenvoudig te voldoen aan de restricties qua het maximum aantal bezoekers.</p>
+                  <form method="post" action="{{ route('home.aanpassen') }}" autocomplete="off" class="form-horizontal">
                     @csrf
                     @method('PATCH')
                       <div class="form-row">
                         <div class="col">
-                          <label for="id">Moment:</label>
+                          <label for="id">Tijdslot:</label>
                           <select class="form-control" name="dag_deel1">
                             @foreach($reserveertijden as $moment)
                               <option value={{ $moment->id}}>{{$moment->id}}</option>
@@ -418,11 +415,8 @@
         <div class="col-md-6">
           <div class="card">
             <div class="card-header card-header-tabs card-header-primary">
-              <div class="nav-tabs-navigation">
-                <div class="nav-tabs-wrapper">
-                  <span class="nav-tabs-title">Huidige openingstijden:</span>
-                </div>
-              </div>
+              <h4 class="card-title">Huidig maximale aantal </h4>
+              <p class="card-category">Overzicht van de huidige maximale aantallen</p>
             </div>
 
             <div class="card-body">
@@ -431,7 +425,7 @@
                   <div class="table-responsive">
                     <table class="table">
                       <thead class=" text-primary">
-                        <th>Moment</th>
+                        <th>Tijdslot</th>
                         <th>Maximaal aantal</th>
                       </thead>
                       <tbody>
