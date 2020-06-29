@@ -345,6 +345,108 @@
       <!-- END OPENINGSTIJDEN ROW -->
 
       <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header card-header-tabs card-header-primary">
+              <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                  <span class="nav-tabs-title">Maximaal aantal aanpassen:</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="tab-content">
+                <div class="tab-pane active">
+                  @if (session('status'))
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="alert alert-success">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <i class="material-icons">close</i>
+                          </button>
+                          <span>{{ session('status') }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  @endif
+                  @if (session('error'))
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="alert alert-danger">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <i class="material-icons">close</i>
+                          </button>
+                          <span>{{ session('error') }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  @endif
+                  <p class="card-category">Hier kunt u de openingstijden van de Binnentuin aanpassen. Wanneer u de locatie voor een of meerdere dagen wilt sluiten hoeft u geen openings- en sluitingstijd in te vullen. Wanneer u de locatie vervolgens wilt openen moet u wel de openingstijden invullen.</p>
+                  <form method="post" action="{{ route('home.update') }}" autocomplete="off" class="form-horizontal">
+                    @csrf
+                    @method('PATCH')
+                      <div class="form-row">
+                        <div class="col">
+                          <label for="id">Moment:</label>
+                          <select class="form-control" name="dag_deel1">
+                            @foreach($reserveertijden as $moment)
+                              <option value={{ $moment->id}}>{{$moment->id}}</option>
+                            @endforeach
+                          </select>
+                        </div>
+                        <div class="col">
+                          <label class="col-form-label" for="max_aantal">Maximaal aantal:</label>
+                          <input class="form-control" type="text" name="max_aantal" placeholder="30">
+                        </div>
+                      </div>
+                      <div class="card-footer ml-auto mr-auto">
+                        <button type="submit" class="btn btn-primary">Aanpassen</button>
+                      </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header card-header-tabs card-header-primary">
+              <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                  <span class="nav-tabs-title">Huidige openingstijden:</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="tab-content">
+                <div class="tab-pane active">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <th>Moment</th>
+                        <th>Maximaal aantal</th>
+                      </thead>
+                      <tbody>
+                        @foreach($reserveertijden as $rij)
+                          <tr>
+                            <td> {{ $rij->id}} </td>
+                            <td> {{ $rij->max_aantal}} </td>
+                          </tr>
+                        @endforeach
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+      <div class="row">
         <div class="col-lg-6 col-md-12">
           <div class="card">
             <div class="card-header card-header-tabs card-header-primary">
