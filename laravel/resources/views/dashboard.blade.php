@@ -344,6 +344,8 @@
       <!-- END OPENINGSTIJDEN SCHEMA -->
       <!-- END OPENINGSTIJDEN ROW -->
 
+      <!-- START AANTAL ROW -->
+      <!-- START AANTAL AANPASSEN -->
       <div class="row">
         <div class="col-md-6">
           <div class="card">
@@ -358,30 +360,31 @@
             <div class="card-body">
               <div class="tab-content">
                 <div class="tab-pane active">
-                  @if (session('status'))
+                  @if (session('statusaantal'))
                     <div class="row">
                       <div class="col-sm-12">
                         <div class="alert alert-success">
                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <i class="material-icons">close</i>
                           </button>
-                          <span>{{ session('status') }}</span>
+                          <span>{{ session('statusaantal') }}</span>
                         </div>
                       </div>
                     </div>
                   @endif
-                  @if (session('error'))
+                  @if (session('erroraantal'))
                     <div class="row">
                       <div class="col-sm-12">
                         <div class="alert alert-danger">
                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <i class="material-icons">close</i>
                           </button>
-                          <span>{{ session('error') }}</span>
+                          <span>{{ session('erroraantal') }}</span>
                         </div>
                       </div>
                     </div>
                   @endif
+
                   <p class="card-category">Hier kunt u de openingstijden van de Binnentuin aanpassen. Wanneer u de locatie voor een of meerdere dagen wilt sluiten hoeft u geen openings- en sluitingstijd in te vullen. Wanneer u de locatie vervolgens wilt openen moet u wel de openingstijden invullen.</p>
                   <form method="post" action="{{ route('home.update') }}" autocomplete="off" class="form-horizontal">
                     @csrf
@@ -409,7 +412,9 @@
             </div>
           </div>
         </div>
+        <!-- END AANTAL AANPASSEN -->
 
+        <!-- START AANTAL SCHEMA -->
         <div class="col-md-6">
           <div class="card">
             <div class="card-header card-header-tabs card-header-primary">
@@ -445,6 +450,8 @@
           </div>
         </div>
         </div>
+        <!-- END AANTAL SCHEMA -->
+        <!-- END AANTAL ROW -->
 
       <div class="row">
         <div class="col-lg-6 col-md-12">
