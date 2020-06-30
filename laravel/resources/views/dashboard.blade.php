@@ -350,7 +350,7 @@
         <div class="col-md-6">
           <div class="card">
             <div class="card-header card-header-tabs card-header-primary">
-              <h4 class="card-title">Maximaal aantal aanpassen</h4>
+              <h4 class="card-title">Maximale aantal aanpassen</h4>
               <p class="card-category">Aantal bezoekers tijdens een tijdshift aanpassen</p>
             </div>
 
@@ -396,7 +396,7 @@
                           </select>
                         </div>
                         <div class="col">
-                          <label class="col-form-label" for="max_aantal">Maximaal aantal:</label>
+                          <label class="col-form-label" for="max_aantal">Maximale aantal:</label>
                           <input class="form-control" type="text" name="max_aantal" placeholder="30">
                         </div>
                       </div>
