@@ -18,7 +18,13 @@
             <p>{{ __('Bestellingen') }}</p>
         </a>
       </li>
-      <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
+        <li class="nav-item{{ $activePage == 'pretest' ? ' active' : '' }}">
+            <a class="nav-link" href="{{ route('pretest.index') }}">
+                <i class="material-icons">content_paste</i>
+                <p>{{ __('Pretest resultaten') }}</p>
+            </a>
+        </li>
+        <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
         <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
           <i class="material-icons">person</i>
           <p>{{ __('Account Management') }}

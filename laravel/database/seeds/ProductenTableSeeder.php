@@ -19,7 +19,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'snacks',
           'prijs' => 4,
           'locatie' => 'binnentuin',
-          'img' => 'https://www.forkknifeswoon.com/wp-content/uploads/2016/05/Img0058-Fork_Knife_Swoon_Roasted_Strawberry_Yogurt_Breakfast_Bowls_with_Chocolate_Coconut_Granola2.jpg'
+          'img' => 'https://drazero.nl/binnentuin/1.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -29,7 +29,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'snacks',
           'prijs' => 1.50,
           'locatie' => 'binnentuin',
-          'img' => 'https://www.abelandcole.co.uk/media/422_14530_z.jpg'
+          'img' => 'https://drazero.nl/binnentuin/2.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -39,7 +39,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'snacks',
           'prijs' => 3.50,
           'locatie' => 'binnentuin',
-          'img' => 'https://i1.wp.com/www.cakesandpumps.com/wp-content/uploads/2015/04/smoothie-with-forest-fruit.jpg'
+          'img' => 'https://drazero.nl/binnentuin/3.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -49,7 +49,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'snacks',
           'prijs' => 3.50,
           'locatie' => 'binnentuin',
-          'img' => 'https://www.cookitrealgood.com/wp-content/uploads/2018/09/bananaoat8.jpg'
+          'img' => 'https://drazero.nl/binnentuin/4.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -59,7 +59,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'snacks',
           'prijs' => 1.50,
           'locatie' => 'binnentuin',
-          'img' => 'https://cdn.sallysbakingaddiction.com/wp-content/uploads/2014/07/oatmeal-raisin-cookies-3.jpg'
+          'img' => 'https://drazero.nl/binnentuin/5.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -69,7 +69,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'snacks',
           'prijs' => 1,
           'locatie' => 'binnentuin',
-          'img' => 'https://www.okokorecepten.nl/i/recepten/kookboeken/2009/kook-ook-brood/zelfgebakken-croissants-600.jpg'
+          'img' => 'https://drazero.nl/binnentuin/6.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -79,7 +79,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'snacks',
           'prijs' => 1.50,
           'locatie' => 'binnentuin',
-          'img' => 'https://lh3.googleusercontent.com/proxy/atYK8M3QsSjCYCBEO6R4mWGWDEyJnHbPI103C7GEw5aiwbDaQR5W6SQXYFOsC8sEUn1osyvUOKFN-6wj62p0FhRUrJl2B96L3WP3WJMCk1Tn2rW1DQSwUSEycwSmHZpzB214U57wLQY2'
+          'img' => 'https://drazero.nl/binnentuin/7.jpg'
       ]);
 
       // Salads
@@ -90,7 +90,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'salads',
           'prijs' => 6,
           'locatie' => 'binnentuin',
-          'img' => 'https://keyassets-p2.timeincuk.net/wp/prod/wp-content/uploads/sites/50/2014/07/beetroot-salad.jpg'
+          'img' => 'https://drazero.nl/binnentuin/8.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -100,7 +100,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'salads',
           'prijs' => 6,
           'locatie' => 'binnentuin',
-          'img' => 'https://i.pinimg.com/originals/b3/32/58/b33258a49c5ae301361af0351f1c29b0.jpg'
+          'img' => 'https://drazero.nl/binnentuin/9.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -110,7 +110,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'salads',
           'prijs' => 5.5,
           'locatie' => 'binnentuin',
-          'img' => 'https://i.pinimg.com/originals/3a/fd/39/3afd39f764689fa943ae4aa1994ddc4a.jpg'
+          'img' => 'https://drazero.nl/binnentuin/10.jpg'
       ]);
 
       // Toasts
@@ -121,7 +121,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'toasts',
           'prijs' => 4.25,
           'locatie' => 'binnentuin',
-          'img' => 'https://d2v9mhsiek5lbq.cloudfront.net/eyJidWNrZXQiOiJsb21hLW1lZGlhLXVrIiwia2V5IjoiZm9vZG5ldHdvcmstaW1hZ2UtZTk2MGU4ZjQtOTM4NC00M2Q0LThmODUtZTA0YmQxZDRlMzgzLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE5MjAsImhlaWdodCI6MTA4MCwiZml0IjoiY292ZXIifX19'
+          'img' => 'https://drazero.nl/binnentuin/11.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -131,7 +131,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'toasts',
           'prijs' => 4.25,
           'locatie' => 'binnentuin',
-          'img' => 'https://cms.splendidtable.org/sites/default/files/styles/w2000/public/174228975.jpg?itok=9UwvV49U'
+          'img' => 'https://drazero.nl/binnentuin/12.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -141,7 +141,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'toasts',
           'prijs' => 3,
           'locatie' => 'binnentuin',
-          'img' => 'https://thecookful.com/wp-content/uploads/2019/05/how-to-grilled-cheese-1392-x780.jpg'
+          'img' => 'https://drazero.nl/binnentuin/13.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -151,7 +151,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'toasts',
           'prijs' => 4.75,
           'locatie' => 'binnentuin',
-          'img' => 'https://www.vibrantplate.com/wp-content/uploads/2018/03/Avocado-toast-01-683x1024.jpg'
+          'img' => 'https://drazero.nl/binnentuin/14.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -161,7 +161,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'toasts',
           'prijs' => 4.75,
           'locatie' => 'binnentuin',
-          'img' => 'https://uprootkitchen.com/wp-content/uploads/2016/02/You-can-eat-this-Whole-Wheat-Yogurt-Quick-Bread-plain-or-toast-it-and-top-it-with-your-favorite-jam-or-nut-butter.-uprootkitchen.com_.jpg'
+          'img' => 'https://drazero.nl/binnentuin/15.jpg'
       ]);
 
       // Sandwitches
@@ -172,7 +172,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'sandwitches',
           'prijs' => 3.75,
           'locatie' => 'binnentuin',
-          'img' => 'https://www.thespruceeats.com/thmb/_xxHqmfl8OvM3mkGVSOEzxN7YTE=/2400x2400/smart/filters:no_upscale()/classic-italian-caprese-sandwich-recipe-4107018-hero-01-5c28eb76c9e77c0001152456.jpg'
+          'img' => 'https://drazero.nl/binnentuin/16.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -182,7 +182,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'sandwitches',
           'prijs' => 4,
           'locatie' => 'binnentuin',
-          'img' => 'https://www.simplyrecipes.com/wp-content/uploads/2012/03/salmon-lemon-cream-sauce-vertical-a-1600.jpg'
+          'img' => 'https://drazero.nl/binnentuin/17.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -192,7 +192,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'sandwitches',
           'prijs' => 3.75,
           'locatie' => 'binnentuin',
-          'img' => 'https://144f2a3a2f948f23fc61-ca525f0a2beaec3e91ca498facd51f15.ssl.cf3.rackcdn.com/uploads/food_portal_data/recipes/recipe/hero_article_image/1292/letterbox_resizeimage593x426xIH24yLOg9w.jpg'
+          'img' => 'https://drazero.nl/binnentuin/18.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -202,7 +202,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'sandwitches',
           'prijs' => 4,
           'locatie' => 'binnentuin',
-          'img' => ''
+          'img' => 'https://drazero.nl/binnentuin/19.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -212,7 +212,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'sandwitches',
           'prijs' => 7,
           'locatie' => 'binnentuin',
-          'img' => 'https://ml2g0rsda5na.i.optimole.com/w:690/h:593/q:auto/http://healthydelicacies.com/wp-content/uploads/2017/03/DSC_1123_2-copy.jpg'
+          'img' => 'https://drazero.nl/binnentuin/20.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -222,7 +222,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'sandwitches',
           'prijs' => 3.5,
           'locatie' => 'binnentuin',
-          'img' => 'https://www.whereyougetyourprotein.com/wp-content/uploads/2016/06/DSC_1089_2-2-copy.jpg'
+          'img' => 'https://drazero.nl/binnentuin/21.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -232,7 +232,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'sandwitches',
           'prijs' => 3.5,
           'locatie' => 'binnentuin',
-          'img' => 'https://lh3.googleusercontent.com/proxy/3t8Ui_TxUGCDAZhiWPXQFXzP79wNAgyAkvhgJ-pjXrLIX6DTYy5QT9bvYJdxkYyaFA-rBNMYZWQaRvHk894iQY2xPRShvhbi-BZV86WDmMChJeInctUi0MWW7CEabE--oknGBmBukux8XqMAHC6370O32ShRKQ0'
+          'img' => 'https://drazero.nl/binnentuin/22.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -242,7 +242,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'sandwitches',
           'prijs' => 6,
           'locatie' => 'binnentuin',
-          'img' => 'https://www.snixykitchen.com/wp-content/uploads/2018/04/Spring-Green-Pancetta-Grilled-Cheese-1-2-1-720x720.jpg'
+          'img' => 'https://drazero.nl/binnentuin/23.jpg'
       ]);
 
       //Bagels
@@ -253,7 +253,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'bagels',
           'prijs' => 5,
           'locatie' => 'binnentuin',
-          'img' => 'https://www.lekkerensimpel.com/wp-content/uploads/2016/10/IMG_7962.jpg'
+          'img' => 'https://drazero.nl/binnentuin/24.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -263,7 +263,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'bagels',
           'prijs' => 5.25,
           'locatie' => 'binnentuin',
-          'img' => 'https://i.pinimg.com/originals/82/1b/0f/821b0ff74c7ee26c4882e954a6f2686e.jpg'
+          'img' => 'https://drazero.nl/binnentuin/21.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -273,7 +273,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'bagels',
           'prijs' => 5,
           'locatie' => 'binnentuin',
-          'img' => 'https://pbs.twimg.com/media/DD5lrY2WAAYgEu4.jpg'
+          'img' => 'https://drazero.nl/binnentuin/26.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -283,7 +283,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'bagels',
           'prijs' => 5.25,
           'locatie' => 'binnentuin',
-          'img' => 'https://fitforrestofyourlife.files.wordpress.com/2014/08/2a70502d4695cfe20a43a581b4150090.jpg'
+          'img' => 'https://drazero.nl/binnentuin/27.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -293,7 +293,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'bagels',
           'prijs' => 8.25,
           'locatie' => 'binnentuin',
-          'img' => 'https://www.veganricha.com/wp-content/uploads/2016/03/avocado-bagel-2393.jpg'
+          'img' => 'https://drazero.nl/binnentuin/28.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -303,7 +303,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'bagels',
           'prijs' => 4.75,
           'locatie' => 'binnentuin',
-          'img' => 'https://i.pinimg.com/originals/e2/8e/59/e28e59663ff5e21224075d10fc231d42.jpg'
+          'img' => 'https://drazero.nl/binnentuin/29.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -313,7 +313,7 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'bagels',
           'prijs' => 4.75,
           'locatie' => 'binnentuin',
-          'img' => 'https://layersofhappiness.com/wp-content/uploads/2014/08/the-works-bagel-3.jpg'
+          'img' => 'https://drazero.nl/binnentuin/30.jpg'
       ]);
 
       DB::table('producten')->insert([
@@ -323,7 +323,38 @@ class ProductenTableSeeder extends Seeder
           'categorie' => 'bagels',
           'prijs' => 7.25,
           'locatie' => 'binnentuin',
-          'img' => 'https://healthyhappylife.com/wp-content/uploads/2015/05/2015_05_24_bagel-pizzas-vegan_9999_104bagel-pizzas-lemon-vegan1212700vegan.png'
+          'img' => 'https://drazero.nl/binnentuin/31.jpg'
+      ]);
+
+      //roof
+      DB::table('producten')->insert([
+          'id' => 32,
+          'naam' => 'Roof kaartje (entree & 6 strippen)',
+          'beschrijving' => 'Doordeweeks',
+          'categorie' => 'theRoof',
+          'prijs' => 10.00,
+          'locatie' => 'The Roof',
+          'img' => 'https://drazero.nl/binnentuin/32.jpg'
+      ]);
+
+      DB::table('producten')->insert([
+          'id' => 33,
+          'naam' => 'Roof kaartje (entree & 6 strippen & snacks)',
+          'beschrijving' => 'Weekend',
+          'categorie' => 'theRoof',
+          'prijs' => 17.00,
+          'locatie' => 'The Roof',
+          'img' => 'https://drazero.nl/binnentuin/33.jpg'
+      ]);
+
+      DB::table('producten')->insert([
+          'id' => 34,
+          'naam' => 'kaartje Large (entree, 9 Strippen & snacks)',
+          'beschrijving' => 'Weekend',
+          'categorie' => 'theRoof',
+          'prijs' => 27.00,
+          'locatie' => 'The Roof',
+          'img' => 'https://drazero.nl/binnentuin/34.jpg'
       ]);
     }
 }

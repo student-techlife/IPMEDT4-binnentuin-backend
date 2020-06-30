@@ -19,10 +19,12 @@ use Laravel\Passport\Http\Controllers\AccessTokenController;
 //     return $request->user();
 // });
 
+Route::post('pretest', ['as' => 'pretest.create', 'uses' => 'PretestController@store']);
+
 // Restaurant
 Route::get('/openingstijden_binnentuin','BinnentuinController@index'); // tijdelijke openingstijden binnentuin
 Route::get('/openingstijden_theroof','TheRoofController@index'); // tijdelijke openingstijden the roof
-Route::get('/reserveertijden','ReserveertijdenController@index'); // tijdelijke heelveelheid mensen 
+Route::get('/reserveertijden','ReserveertijdenController@index'); // tijdelijke heelveelheid mensen
 
 Route::get('/producten','ProductenController@index'); // Producten van de menu pagina
 Route::get('/producten/{categorie}', 'ProductenController@show'); // Bepaalde categorie van producten
