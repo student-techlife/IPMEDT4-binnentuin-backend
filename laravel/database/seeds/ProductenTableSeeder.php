@@ -325,5 +325,36 @@ class ProductenTableSeeder extends Seeder
           'locatie' => 'binnentuin',
           'img' => 'https://drazero.nl/binnentuin/31.jpg'
       ]);
+
+      //roof
+      DB::table('producten')->insert([
+          'id' => 32,
+          'naam' => 'Roof kaartje (entree & 6 strippen)',
+          'beschrijving' => 'Doordeweeks',
+          'categorie' => 'theRoof',
+          'prijs' => 10.00,
+          'locatie' => 'The Roof',
+          'img' => 'https://drazero.nl/binnentuin/32.jpg'
+      ]);
+
+      DB::table('producten')->insert([
+          'id' => 33,
+          'naam' => 'Roof kaartje (entree & 6 strippen & snacks)',
+          'beschrijving' => 'Weekend',
+          'categorie' => 'theRoof',
+          'prijs' => 17.00,
+          'locatie' => 'The Roof',
+          'img' => 'https://drazero.nl/binnentuin/33.jpg'
+      ]);
+
+      DB::table('producten')->insert([
+          'id' => 34,
+          'naam' => 'kaartje Large (entree, 9 Strippen & snacks)',
+          'beschrijving' => 'Weekend',
+          'categorie' => 'theRoof',
+          'prijs' => 27.00,
+          'locatie' => 'The Roof',
+          'img' => 'https://drazero.nl/binnentuin/34.jpg'
+      ]);
     }
 }
