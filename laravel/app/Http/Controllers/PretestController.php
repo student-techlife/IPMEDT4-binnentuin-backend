@@ -44,7 +44,13 @@ class PretestController extends Controller
         $validation = Validator::make($request->all(),[
             'persons' => 'required|integer',
             'reservation_time' => 'required',
-            'symptoms' => 'boolean'
+            'symptoms' => 'required|boolean'
+        ], [
+            'persons.required' => 'Je moet het aantal personen invullen',
+            'persons.integer' => 'Het aantal personen moet een getal zijn',
+            'reservation_time.required' => 'Er moet een tijd ingevuld worden',
+            'symptoms.required' => 'Je moet invullen of je symptomen hebt',
+            'symptoms.boolean' => 'Je moet ja of nee invullen',
         ]);
 
         if ($validation->fails()) {
