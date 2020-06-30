@@ -294,5 +294,33 @@ class ProductenTableSeeder extends Seeder
           'prijs' => 7.25,
           'locatie' => 'binnentuin'
       ]);
+
+      //roof
+      DB::table('producten')->insert([
+          'id' => 32,
+          'naam' => 'Roof kaartje (entree & 6 strippen)',
+          'beschrijving' => 'Doordeweeks',
+          'categorie' => 'theRoof',
+          'prijs' => 10.00,
+          'locatie' => 'The Roof'
+      ]);
+
+      DB::table('producten')->insert([
+          'id' => 33,
+          'naam' => 'Roof kaartje (entree & 6 strippen & snacks)',
+          'beschrijving' => 'Weekend',
+          'categorie' => 'theRoof',
+          'prijs' => 17.00,
+          'locatie' => 'The Roof'
+      ]);
+
+      DB::table('producten')->insert([
+          'id' => 34,
+          'naam' => 'kaartje Large (entree, 9 Strippen & snacks)',
+          'beschrijving' => 'Weekend',
+          'categorie' => 'theRoof',
+          'prijs' => 27.00,
+          'locatie' => 'The Roof'
+      ]);
     }
 }
