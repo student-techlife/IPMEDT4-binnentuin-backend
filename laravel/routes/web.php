@@ -19,10 +19,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
-
-Route::patch('/home/update', ['as' => 'home.update', 'uses' => 'BinnentuinController@update'])->middleware('auth');
-
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('table-list', function () {
 		return view('pages.table_list');
@@ -55,7 +51,11 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'UserController', ['except' => ['show']]);
+	Route::get('/home', 'HomeController@index')->name('home');
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
+	Route::patch('/home/update', ['as' => 'home.update', 'uses' => 'BinnentuinController@update']);
+
+	Route::post('/user/destroy', ['as' => 'user.destroy', 'uses' => 'UserController@destroy']);
 });

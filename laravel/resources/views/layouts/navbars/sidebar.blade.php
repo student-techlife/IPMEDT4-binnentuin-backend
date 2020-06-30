@@ -33,7 +33,7 @@
                 <span class="sidebar-normal">{{ __('Mijn Profiel') }} </span>
               </a>
             </li>
-            <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
+            <li class="nav-item{{ $activePage == 'user' ? ' active' : '' }}">
               <a class="nav-link" href="{{ route('user.index') }}">
                 <span class="sidebar-mini"> GM </span>
                 <span class="sidebar-normal"> {{ __('Gebruikers Management') }} </span>
