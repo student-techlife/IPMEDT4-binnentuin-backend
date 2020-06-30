@@ -22,8 +22,9 @@ Auth::routes();
 // Dashboard Auth group
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@index')->name('home');
+	Route::get('/pretest', ['as' => 'pretest.index', 'uses' => 'PretestController@index']);
     Route::patch('/home/update', ['as' => 'home.update', 'uses' => 'BinnentuinController@update']);
-    Route::patch('/home/aanpassen', ['as' => 'home.aanpassen', 'uses' => 'ReserveertijdenController@update']);
+	Route::patch('/home/aanpassen', ['as' => 'home.aanpassen', 'uses' => 'ReserveertijdenController@update']);
 });
 
 // Profile Auth group
