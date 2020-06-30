@@ -22,11 +22,9 @@ class UserController extends Controller
     }
 
     public function destroy(Request $request) {
-
-            DB::table('users')
-                ->where('id', $request['id'])
-                ->delete();
-        
+        DB::table('users')
+            ->where('id', $request['id'])
+            ->delete();
         return redirect()->back();
     }
 }

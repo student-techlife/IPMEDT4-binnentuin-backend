@@ -1,7 +1,5 @@
 @extends('layouts.app', ['activePage' => 'user', 'titlePage' => __('Management')])
-<script>
-  
-</script>
+
 @section('content')
 <div class="content">
   <div class="container-fluid">

@@ -33,7 +33,7 @@ class RegisterController extends Controller
      */
     protected function redirectTo()
     {
-        return route('profile.edit');
+        return url('/user');
     }
 
     /**
