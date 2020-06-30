@@ -21,7 +21,7 @@
                                         aantal personen
                                     </th>
                                     <th>
-                                        symthomen
+                                        symtomen
                                     </th>
                                     <th>
                                         tijd
@@ -33,7 +33,7 @@
 {{--                                            Todo: koppel with user--}}
 {{--                                            <td>{{$pretest->user->name}}</td>--}}
                                             <td>{{$pretest->persons}}</td>
-                                            <td>{{$pretest->sympthoms ? 'Ja' : 'Nee'}}</td>
+                                            <td>{{$pretest->symptoms ? 'Ja' : 'Nee'}}</td>
                                             <td>{{$pretest->reservation_time}}</td>
                                         </tr>
                                     @endforeach
