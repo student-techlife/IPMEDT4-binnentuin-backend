@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Http\Request;
-use DB;
 
 class UserController extends Controller
 {
@@ -19,12 +17,5 @@ class UserController extends Controller
     public function index(User $model)
     {
         return view('users.index', ['users' => $model->paginate(15)]);
-    }
-
-    public function destroy(Request $request) {
-        DB::table('users')
-            ->where('id', $request['id'])
-            ->delete();
-        return redirect()->back();
     }
 }

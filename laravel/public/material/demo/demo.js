@@ -1,9 +1,10 @@
 demo = {
   initDocumentationCharts: function() {
     if ($('#dailySalesChart').length != 0 && $('#websiteViewsChart').length != 0) {
+      /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
 
       dataDailySalesChart = {
-        labels: ['Ma', 'Di', 'Wo', 'Do', 'Vr', 'Za', 'Zo'],
+        labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
         series: [
           [12, 17, 7, 17, 23, 18, 38]
         ]
@@ -14,7 +15,7 @@ demo = {
           tension: 0
         }),
         low: 0,
-        high: 50,
+        high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
         chartPadding: {
           top: 0,
           right: 0,
@@ -32,9 +33,10 @@ demo = {
   initDashboardPageCharts: function() {
 
     if ($('#dailySalesChart').length != 0 || $('#completedTasksChart').length != 0 || $('#websiteViewsChart').length != 0) {
+      /* ----------==========     Daily Sales Chart initialization    ==========---------- */
 
       dataDailySalesChart = {
-        labels: ['Ma', 'Di', 'Wo', 'Do', 'Vr', 'Za', 'Zo'],
+        labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
         series: [
           [12, 17, 7, 17, 23, 18, 38]
         ]
@@ -45,7 +47,7 @@ demo = {
           tension: 0
         }),
         low: 0,
-        high: 50,
+        high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
         chartPadding: {
           top: 0,
           right: 0,
@@ -60,6 +62,7 @@ demo = {
 
 
 
+      /* ----------==========     Completed Tasks Chart initialization    ==========---------- */
 
       dataCompletedTasksChart = {
         labels: ['12p', '3p', '6p', '9p', '12p', '3a', '6a', '9a'],
@@ -73,7 +76,7 @@ demo = {
           tension: 0
         }),
         low: 0,
-        high: 1000, 
+        high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
         chartPadding: {
           top: 0,
           right: 0,
@@ -84,9 +87,11 @@ demo = {
 
       var completedTasksChart = new Chartist.Line('#completedTasksChart', dataCompletedTasksChart, optionsCompletedTasksChart);
 
+      // start animation for the Completed Tasks Chart - Line Chart
       md.startAnimationForLineChart(completedTasksChart);
 
 
+      /* ----------==========     Emails Subscription Chart initialization    ==========---------- */
 
       var dataWebsiteViewsChart = {
         labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
@@ -120,6 +125,7 @@ demo = {
       ];
       var websiteViewsChart = Chartist.Bar('#websiteViewsChart', dataWebsiteViewsChart, optionsWebsiteViewsChart, responsiveOptions);
 
+      //start animation for the Emails Subscription Chart
       md.startAnimationForBarChart(websiteViewsChart);
     }
   },
@@ -129,7 +135,7 @@ demo = {
     var mapOptions = {
       zoom: 13,
       center: myLatlng,
-      scrollwheel: false, 
+      scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
       styles: [{
         "featureType": "water",
         "stylers": [{
@@ -224,6 +230,7 @@ demo = {
       title: "Hello World!"
     });
 
+    // To add the marker to the map, call setMap();
     marker.setMap(map);
   }
 

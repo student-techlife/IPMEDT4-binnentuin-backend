@@ -12,12 +12,12 @@
             <p>{{ __('Dashboard') }}</p>
         </a>
       </li>
-      {{-- <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
+      <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('table') }}">
           <i class="material-icons">content_paste</i>
             <p>{{ __('Bestellingen') }}</p>
         </a>
-      </li> --}}
+      </li>
         <li class="nav-item{{ $activePage == 'pretest' ? ' active' : '' }}">
             <a class="nav-link" href="{{ route('pretest.index') }}">
                 <i class="material-icons">content_paste</i>
@@ -39,7 +39,7 @@
                 <span class="sidebar-normal">{{ __('Mijn Profiel') }} </span>
               </a>
             </li>
-            <li class="nav-item{{ $activePage == 'user' ? ' active' : '' }}">
+            <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
               <a class="nav-link" href="{{ route('user.index') }}">
                 <span class="sidebar-mini"> GM </span>
                 <span class="sidebar-normal"> {{ __('Gebruikers Management') }} </span>
