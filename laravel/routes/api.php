@@ -26,8 +26,8 @@ Route::get('/openingstijden_binnentuin','BinnentuinController@index'); // tijdel
 Route::get('/openingstijden_theroof','TheRoofController@index'); // tijdelijke openingstijden the roof
 Route::get('/reserveertijden','ReserveertijdenController@index'); // tijdelijke heelveelheid mensen
 
-Route::get('/producten','ProductenController@index'); // Producten van de menu pagina
-Route::get('/producten/{categorie}', 'ProductenController@show'); // Bepaalde categorie van producten
+Route::get('/producten','ProductenController@indexProducten'); // Producten van de menu pagina
+Route::get('/producten/{categorie}', 'ProductenController@getProCat'); // Bepaalde categorie van producten
 
 
 
