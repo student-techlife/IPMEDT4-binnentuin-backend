@@ -8,7 +8,7 @@
           <div class="card">
             <div class="card-header card-header-primary">
               <h4 class="card-title ">Gebruikers</h4>
-              <p class="card-category"> Hier kan je de gebruikers beheren</p>
+              <p class="card-category">Hier kan je de gebruikers beheren</p>
             </div>
             <div class="card-body">
               <div class="row">

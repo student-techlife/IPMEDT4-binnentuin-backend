@@ -25,6 +25,10 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/pretest', ['as' => 'pretest.index', 'uses' => 'PretestController@index']);
     Route::patch('/home/update', ['as' => 'home.update', 'uses' => 'BinnentuinController@update']);
 	Route::patch('/home/aanpassen', ['as' => 'home.aanpassen', 'uses' => 'ReserveertijdenController@update']);
+
+	// Producten
+	Route::resource('producten', 'ProductenController', ['names' => 'producten']);
+	Route::resource('bestellingen', 'BestellingenController', ['names' => 'bestellingen']);
 });
 
 // Profile Auth group

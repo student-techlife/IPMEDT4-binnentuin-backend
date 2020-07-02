@@ -12,12 +12,18 @@
             <p>{{ __('Dashboard') }}</p>
         </a>
       </li>
-      {{-- <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('table') }}">
-          <i class="material-icons">content_paste</i>
+      <li class="nav-item{{ $activePage == 'bestellingen' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('bestellingen.index') }}">
+          <i class="material-icons">store</i>
             <p>{{ __('Bestellingen') }}</p>
         </a>
-      </li> --}}
+      </li>
+      <li class="nav-item{{ $activePage == 'producten' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('producten.index') }}">
+          <i class="material-icons">fastfood</i>
+            <p>{{ __('Producten') }}</p>
+        </a>
+      </li>
         <li class="nav-item{{ $activePage == 'pretest' ? ' active' : '' }}">
             <a class="nav-link" href="{{ route('pretest.index') }}">
                 <i class="material-icons">content_paste</i>
