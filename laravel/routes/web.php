@@ -19,6 +19,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// Mollie
+Route::get('/checkout/{data}', 'MollieController@preparePayment');
+Route::post('webhooks/mollie', 'MollieController@handle')->name('webhooks.mollie');
+
+
 // Dashboard Auth group
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@index')->name('home');
@@ -39,7 +44,6 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 	Route::post('/user/destroy', ['as' => 'user.destroy', 'uses' => 'UserController@destroy']);
 });
-
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('table-list', function () {
 		return view('pages.table_list');
