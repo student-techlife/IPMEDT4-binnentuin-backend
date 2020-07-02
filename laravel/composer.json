@@ -20,6 +20,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
         "lorisleiva/laravel-deployer": "^0.3.2",
+        "mollie/laravel-mollie": "^2.0",
         "realrashid/sweet-alert": "^3.1"
     },
     "require-dev": {
