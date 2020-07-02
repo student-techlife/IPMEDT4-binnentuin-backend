@@ -19,7 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// Mollie
 Route::get('/checkout/{data}', 'MollieController@preparePayment');
+Route::post('webhooks/mollie', 'MollieController@handle')->name('webhooks.mollie');
+
 
 // Dashboard Auth group
 Route::group(['middleware' => 'auth'], function () {

@@ -9,7 +9,7 @@ use DB;
 class MollieController extends Controller
 {
     public function preparePayment($data) {
-        dd($data);
+        // dd($data);
         $payment = Mollie::api()->payments->create([
             "amount" => [
                 "currency" => "EUR",
@@ -17,7 +17,7 @@ class MollieController extends Controller
             ],
             "description" => "Bestelnummer",
             "redirectUrl" => 'https://binnentuin.live',
-            "webhookUrl" => 'https://binnentuin.live',
+            "webhookUrl" => route('webhooks.mollie'),
             "metadata" => [
                 "order_id" => "12345",
             ],
@@ -27,5 +27,17 @@ class MollieController extends Controller
     
         // redirect customer to Mollie checkout page
         return redirect($payment->getCheckoutUrl(), 303);
+    }
+
+    public function handle(Request $request) {
+        if (! $request->has('id')) {
+            return;
+        }
+
+        $payment = Mollie::api()->payments()->get($request->id);
+
+        if ($payment->isPaid()) {
+            return redirect('https://binnentuin.live/');
+        }
     }
 }
