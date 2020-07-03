@@ -11,5 +11,4 @@ class Pretest extends Model
     protected $casts = [
         'symptoms' => 'boolean'
     ];
-    public $timestamps = false;
 }

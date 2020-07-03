@@ -15,9 +15,11 @@ class CreatePretestsTable extends Migration
     {
         Schema::create('pretests', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->integer('persons');
             $table->string('reservation_time');
             $table->boolean('symptoms');
+            $table->timestamps();
         });
     }
 
