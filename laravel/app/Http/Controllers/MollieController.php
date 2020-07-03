@@ -8,7 +8,7 @@ use DB;
 
 class MollieController extends Controller
 {
-    public function preparePayment($data) {
+    public function preparePayment() {
         // dd($data);
         $payment = Mollie::api()->payments->create([
             "amount" => [
