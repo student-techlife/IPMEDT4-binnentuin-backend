@@ -164,12 +164,12 @@ class ProductenTableSeeder extends Seeder
             'img' => '15.jpg'
         ]);
 
-        // Sandwitches
+        // Sandwiches
         DB::table('producten')->insert([
             'id' => 16,
             'naam' => 'Caprese',
             'beschrijving' => 'With pesto, mozzarella, tomato & rocket',
-            'categorie' => 'sandwitches',
+            'categorie' => 'sandwiches',
             'prijs' => 3.75,
             'locatie' => 'binnentuin',
             'img' => '16.jpg'
@@ -179,7 +179,7 @@ class ProductenTableSeeder extends Seeder
             'id' => 17,
             'naam' => 'Salmon',
             'beschrijving' => 'Smoked ASC salmon with cream cheese',
-            'categorie' => 'sandwitches',
+            'categorie' => 'sandwiches',
             'prijs' => 4,
             'locatie' => 'binnentuin',
             'img' => '17.jpg'
@@ -189,7 +189,7 @@ class ProductenTableSeeder extends Seeder
             'id' => 18,
             'naam' => 'Mackerel',
             'beschrijving' => 'Homemade mackerel salad',
-            'categorie' => 'sandwitches',
+            'categorie' => 'sandwiches',
             'prijs' => 3.75,
             'locatie' => 'binnentuin',
             'img' => '18.jpg'
@@ -199,7 +199,7 @@ class ProductenTableSeeder extends Seeder
             'id' => 19,
             'naam' => 'Avo',
             'beschrijving' => 'Avocado, hummus, tomato & walnuts',
-            'categorie' => 'sandwitches',
+            'categorie' => 'sandwiches',
             'prijs' => 4,
             'locatie' => 'binnentuin',
             'img' => '19.jpg'
@@ -209,7 +209,7 @@ class ProductenTableSeeder extends Seeder
             'id' => 20,
             'naam' => 'Avo + another slice',
             'beschrijving' => 'Avocado, hummus, tomato & walnuts',
-            'categorie' => 'sandwitches',
+            'categorie' => 'sandwiches',
             'prijs' => 7,
             'locatie' => 'binnentuin',
             'img' => '20.jpg'
@@ -219,7 +219,7 @@ class ProductenTableSeeder extends Seeder
             'id' => 21,
             'naam' => 'Hummus',
             'beschrijving' => 'With tomato & lettuce',
-            'categorie' => 'sandwitches',
+            'categorie' => 'sandwiches',
             'prijs' => 3.5,
             'locatie' => 'binnentuin',
             'img' => '21.jpg'
@@ -229,7 +229,7 @@ class ProductenTableSeeder extends Seeder
             'id' => 22,
             'naam' => 'Gezond',
             'beschrijving' => 'Cheese & greens',
-            'categorie' => 'sandwitches',
+            'categorie' => 'sandwiches',
             'prijs' => 3.5,
             'locatie' => 'binnentuin',
             'img' => '22.jpg'
@@ -239,7 +239,7 @@ class ProductenTableSeeder extends Seeder
             'id' => 23,
             'naam' => 'Gezond + another slice',
             'beschrijving' => 'Cheese & greens',
-            'categorie' => 'sandwitches',
+            'categorie' => 'sandwiches',
             'prijs' => 6,
             'locatie' => 'binnentuin',
             'img' => '23.jpg'

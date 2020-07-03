@@ -54,6 +54,12 @@
           </ul>
         </div>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://binnentuin.live" target="_blank">
+          <i class="material-icons">language</i>
+            <p>{{ __('Naar frontend') }}</p>
+        </a>
+      </li>
     </ul>
   </div>
 </div>

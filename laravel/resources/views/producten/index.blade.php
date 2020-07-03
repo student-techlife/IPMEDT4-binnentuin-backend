@@ -117,7 +117,7 @@
                                         <option value="snacks">Snacks</option>
                                         <option value="salads">Salads</option>
                                         <option value="toasts">Toasts</option>
-                                        <option value="sandwitches">Sandwitches</option>
+                                        <option value="sandwiches">Sandwiches</option>
                                         <option value="bagels">Bagels</option>
                                         <option value="theRoof">The Roof</option>
                                     </select>

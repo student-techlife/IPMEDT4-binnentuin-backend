@@ -20,6 +20,7 @@ use Laravel\Passport\Http\Controllers\AccessTokenController;
 // });
 
 Route::post('pretest', ['as' => 'pretest.create', 'uses' => 'PretestController@store']);
+Route::post('/checkout/save', 'MollieController@savebestelling')->name('bestelling.save');
 
 // Restaurant
 Route::get('/openingstijden_binnentuin','BinnentuinController@index'); // tijdelijke openingstijden binnentuin

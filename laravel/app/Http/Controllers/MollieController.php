@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Mollie\Laravel\Facades\Mollie;
+use App\Bestellingen;
+use App\ProductInBestelling;
 use DB;
 
 class MollieController extends Controller
@@ -42,6 +44,43 @@ class MollieController extends Controller
     }
 
     public function savebestelling(Request $request) {
-        return redirect()->route('checkout.get');
+        $bestelling = new Bestellingen();
+        $bestelling->naam           = $request->input('naam');
+        $bestelling->totaalPrijs    = $request->input('totaalPrijs');
+        $bestelling->status         = "In behandeling";
+
+        $data = $request->all();
+        $producten_ar = explode(',',$data['producten']);
+        $aantal_ar = explode(',',$data['aantal']);
+        $result = array_combine($producten_ar,$aantal_ar);
+
+        // foreach ($result as $producten_ar) {
+        //     $product = new ProductInBestelling();
+        //     $product->product_id = $prod;
+        //     dd($product->product_id);
+        // }
+
+        try {
+            $bestelling->save();
+            // dd("De bestelling is succesvol opgeslagen");
+        } catch (\Throwable $th) {
+            dd($th);
+        }
+
+        foreach ($result as $key => $test) {
+            $product = new ProductInBestelling();
+            $product->product_id    = $key;
+            $product->aantal        = $test;
+            $product->bestel_id     = "1";
+
+            try {
+                $product->save();
+            } catch (\Throwable $th) {
+                dd($th);
+            }
+        }
+
+        return redirect('https://binnentuin.live/checkout');
+        // return redirect()->route('checkout.get');
     }
 }

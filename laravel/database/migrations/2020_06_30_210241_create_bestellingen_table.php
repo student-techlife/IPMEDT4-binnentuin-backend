@@ -16,8 +16,9 @@ class CreateBestellingenTable extends Migration
         Schema::create('bestellingen', function (Blueprint $table) {
             $table->id();
             $table->string('naam');
-            $table->string('email');
+            $table->string('email')->nullable();
             $table->double('totaalPrijs');
+            $table->string('status');
             $table->timestamps();
         });
     }
