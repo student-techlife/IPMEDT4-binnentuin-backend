@@ -49,24 +49,38 @@ class MollieController extends Controller
         $bestelling->totaalPrijs    = $request->input('totaalPrijs');
         $bestelling->status         = "In behandeling";
 
-        // $data = $request->all();
-        dd($request);
-        // $product_ids = $data['product_id'];
-        // $product_aantal = $data['aantal'];
+        $data = $request->all();
+        $producten_ar = explode(',',$data['producten']);
+        $aantal_ar = explode(',',$data['aantal']);
+        $result = array_combine($producten_ar,$aantal_ar);
 
-        foreach ($product_ids as $key => $inputs) {
-            $proInBestel = new ProductInBestelling();
-            $proInBestel->product_id    = isset($product_ids[$key]);
-        }
-        
+        // foreach ($result as $producten_ar) {
+        //     $product = new ProductInBestelling();
+        //     $product->product_id = $prod;
+        //     dd($product->product_id);
+        // }
 
         try {
-            // $bestelling->save();
-            dd("De bestelling is succesvol opgeslagen");
+            $bestelling->save();
+            // dd("De bestelling is succesvol opgeslagen");
         } catch (\Throwable $th) {
             dd($th);
         }
 
+        foreach ($result as $key => $test) {
+            $product = new ProductInBestelling();
+            $product->product_id    = $key;
+            $product->aantal        = $test;
+            $product->bestel_id     = "1";
+
+            try {
+                $product->save();
+            } catch (\Throwable $th) {
+                dd($th);
+            }
+        }
+
+        return redirect('https://binnentuin.live/checkout');
         // return redirect()->route('checkout.get');
     }
 }
