@@ -22,7 +22,6 @@ Auth::routes();
 // Mollie
 Route::get('/checkout', 'MollieController@preparePayment')->name('checkout.get');
 Route::post('webhooks/mollie', 'MollieController@handle')->name('webhooks.mollie');
-Route::post('/checkout/save', 'MollieController@savebestelling')->name('bestelling.save');
 
 // Dashboard Auth group
 Route::group(['middleware' => 'auth'], function () {
