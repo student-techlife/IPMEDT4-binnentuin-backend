@@ -8,7 +8,7 @@ use DB;
 
 class MollieController extends Controller
 {
-    public function preparePayment($data) {
+    public function preparePayment() {
         // dd($data);
         $payment = Mollie::api()->payments->create([
             "amount" => [
@@ -37,7 +37,11 @@ class MollieController extends Controller
         $payment = Mollie::api()->payments()->get($request->id);
 
         if ($payment->isPaid()) {
-            return redirect('https://binnentuin.live/');
+            return redirect('https://binnentuin.live/bevestiging');
         }
+    }
+
+    public function savebestelling(Request $request) {
+        return redirect()->route('checkout.get');
     }
 }
