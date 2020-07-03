@@ -38,8 +38,7 @@ class PretestController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
 
         $validation = Validator::make($request->all(),[
             'persons' => 'required|integer',
