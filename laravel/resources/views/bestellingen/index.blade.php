@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'bestellingen']);
+@extends('layouts.app', ['activePage' => 'bestellingen', 'titlepage' => __('Bestellingen')]);
 
 @section('content')
     <div class="content">
@@ -17,6 +17,7 @@
                                         <thead class="text-primary">
                                             <th>ID</th>
                                             <th>Naam</th>
+                                            <th>Totaalprijs</th>
                                             <th>Datum</th>
                                         </thead>
                                         <tbody>
@@ -24,6 +25,7 @@
                                                 <tr>
                                                     <td>{{ $order->id }}</td>
                                                     <td>{{ $order->naam }}</td>
+                                                    <td>€{{ $order->totaalPrijs }}</td>
                                                     <td>{{ $order->created_at }}</td>
                                                 </tr>
                                             @endforeach
