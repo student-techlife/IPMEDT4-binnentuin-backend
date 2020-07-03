@@ -80,7 +80,7 @@ class MollieController extends Controller
             }
         }
 
-        return redirect('https://binnentuin.live/checkout');
+        return "De bestelling is gelukt!";
         // return redirect()->route('checkout.get');
     }
 }
