@@ -20,9 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 // Mollie
-Route::get('/checkout/{data}', 'MollieController@preparePayment');
+Route::get('/checkout', 'MollieController@preparePayment')->name('checkout.get');
 Route::post('webhooks/mollie', 'MollieController@handle')->name('webhooks.mollie');
-
+Route::post('/checkout/save', 'MollieController@save')->name('bestelling.save');
 
 // Dashboard Auth group
 Route::group(['middleware' => 'auth'], function () {
@@ -43,33 +43,4 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 	Route::post('/user/destroy', ['as' => 'user.destroy', 'uses' => 'UserController@destroy']);
-});
-Route::group(['middleware' => 'auth'], function () {
-	Route::get('table-list', function () {
-		return view('pages.table_list');
-	})->name('table');
-
-	Route::get('typography', function () {
-		return view('pages.typography');
-	})->name('typography');
-
-	Route::get('icons', function () {
-		return view('pages.icons');
-	})->name('icons');
-
-	Route::get('map', function () {
-		return view('pages.map');
-	})->name('map');
-
-	Route::get('notifications', function () {
-		return view('pages.notifications');
-	})->name('notifications');
-
-	Route::get('rtl-support', function () {
-		return view('pages.language');
-	})->name('language');
-
-	Route::get('upgrade', function () {
-		return view('pages.upgrade');
-	})->name('upgrade');
 });
