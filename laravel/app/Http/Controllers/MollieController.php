@@ -49,8 +49,8 @@ class MollieController extends Controller
         $bestelling->totaalPrijs    = $request->input('totaalPrijs');
         $bestelling->status         = "In behandeling";
 
-        $data = $request->all();
-        dd($data);
+        // $data = $request->all();
+        dd($request);
         // $product_ids = $data['product_id'];
         // $product_aantal = $data['aantal'];
 
