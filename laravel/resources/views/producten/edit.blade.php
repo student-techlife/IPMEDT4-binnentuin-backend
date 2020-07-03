@@ -36,7 +36,7 @@
                                                 <option value="snacks" {{$producten->categorie == "snacks"  ? 'selected' : ''}}>Snacks</option>
                                                 <option value="salads" {{$producten->categorie == "salads"  ? 'selected' : ''}}>Salads</option>
                                                 <option value="toasts" {{$producten->categorie == "toasts"  ? 'selected' : ''}}>Toasts</option>
-                                                <option value="sandwitches" {{$producten->categorie == "sandwitches"  ? 'selected' : ''}}>Sandwitches</option>
+                                                <option value="sandwiches" {{$producten->categorie == "sandwiches"  ? 'selected' : ''}}>Sandwiches</option>
                                                 <option value="bagels" {{$producten->categorie == "bagels"  ? 'selected' : ''}}>Bagels</option>
                                                 <option value="theRoof" {{$producten->categorie == "theRoof"  ? 'selected' : ''}}>The Roof</option>
                                             </select>
