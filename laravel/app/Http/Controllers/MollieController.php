@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Mollie\Laravel\Facades\Mollie;
+use App\Bestellingen;
 use DB;
 
 class MollieController extends Controller
@@ -42,6 +43,16 @@ class MollieController extends Controller
     }
 
     public function savebestelling(Request $request) {
-        return redirect()->route('checkout.get');
+        $bestelling = new Bestellingen();
+        $bestelling->status = "In behandeling";
+
+        try {
+            $bestelling->save();
+            dd("De bestelling is succesvol opgeslagen");
+        } catch (\Throwable $th) {
+            dd($th);
+        }
+
+        // return redirect()->route('checkout.get');
     }
 }

@@ -18,6 +18,7 @@ class CreateBestellingenTable extends Migration
             $table->string('naam');
             $table->string('email');
             $table->double('totaalPrijs');
+            $table->string('status');
             $table->timestamps();
         });
     }
