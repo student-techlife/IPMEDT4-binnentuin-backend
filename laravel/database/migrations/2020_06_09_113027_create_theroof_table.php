@@ -18,7 +18,7 @@ class CreateTheroofTable extends Migration
             $table->string('dag_van_week')->unique();
             $table->string('openingstijd');
             $table->string('sluitingstijd');
-            $table->boolean('status')->default(0);
+            $table->boolean('status')->default(1);
         });
     }
 
