@@ -18,6 +18,7 @@
                                             <th>ID</th>
                                             <th>Naam</th>
                                             <th>Totaalprijs</th>
+                                            <th>Status</th>
                                             <th>Datum</th>
                                         </thead>
                                         <tbody>
@@ -26,6 +27,7 @@
                                                     <td>{{ $order->id }}</td>
                                                     <td>{{ $order->naam }}</td>
                                                     <td>€{{ $order->totaalPrijs }}</td>
+                                                    <td>{{ $order->status }}</td>
                                                     <td>{{ $order->created_at }}</td>
                                                 </tr>
                                             @endforeach

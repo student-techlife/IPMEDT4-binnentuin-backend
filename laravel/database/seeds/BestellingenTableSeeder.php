@@ -21,7 +21,7 @@ class BestellingenTableSeeder extends Seeder
             'naam' => 'Piet',
             'email' => 'Piet@test.nl',
             'totaalPrijs' => '75',
-            'status' => 'In behandeling'
+            'status' => 'Betaald'
         ]);
     }
 }
