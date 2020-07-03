@@ -14,29 +14,24 @@
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead class=" text-primary">
-{{--                                    <th>--}}
-{{--                                        Name--}}
-{{--                                    </th>--}}
-                                    <th>
-                                        aantal personen
-                                    </th>
-                                    <th>
-                                        symtomen
-                                    </th>
-                                    <th>
-                                        tijd
-                                    </th>
+                                        <th>Naam</th>
+                                        <th>Aantal personen</th>
+                                        <th>Symtomen</th>
+                                        <th>Datum</th>
+                                        <th>Tijd</th>
                                     </thead>
                                     <tbody>
-                                    @foreach($pretests as $pretest)
-                                        <tr>
-{{--                                            Todo: koppel with user--}}
-{{--                                            <td>{{$pretest->user->name}}</td>--}}
-                                            <td>{{$pretest->persons}}</td>
-                                            <td>{{$pretest->symptoms ? 'Ja' : 'Nee'}}</td>
-                                            <td>{{$pretest->reservation_time}}</td>
-                                        </tr>
-                                    @endforeach
+                                        @foreach($pretests as $pretest)
+                                            <tr>
+    {{--                                            Todo: koppel with user--}}
+    {{--                                            <td>{{$pretest->user->name}}</td>--}}
+                                                <td>{{$pretest->name}}</td>
+                                                <td>{{$pretest->persons}}</td>
+                                                <td>{{$pretest->symptoms ? 'Ja' : 'Nee'}}</td>
+                                                <td>{{$pretest->created_at}}</td>
+                                                <td>{{$pretest->reservation_time}}</td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
