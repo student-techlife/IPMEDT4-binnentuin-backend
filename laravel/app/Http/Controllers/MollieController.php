@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Mollie\Laravel\Facades\Mollie;
 use App\Bestellingen;
+use App\ProductInBestelling;
 use DB;
 
 class MollieController extends Controller
@@ -44,10 +45,23 @@ class MollieController extends Controller
 
     public function savebestelling(Request $request) {
         $bestelling = new Bestellingen();
-        $bestelling->status = "In behandeling";
+        $bestelling->naam           = $request->input('naam');
+        $bestelling->totaalPrijs    = $request->input('totaalPrijs');
+        $bestelling->status         = "In behandeling";
+
+        $data = $request->all();
+        dd($data);
+        // $product_ids = $data['product_id'];
+        // $product_aantal = $data['aantal'];
+
+        foreach ($product_ids as $key => $inputs) {
+            $proInBestel = new ProductInBestelling();
+            $proInBestel->product_id    = isset($product_ids[$key]);
+        }
+        
 
         try {
-            $bestelling->save();
+            // $bestelling->save();
             dd("De bestelling is succesvol opgeslagen");
         } catch (\Throwable $th) {
             dd($th);
