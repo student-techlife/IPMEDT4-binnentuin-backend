@@ -1,8 +1,14 @@
-name: Binnentuinapp
-
+name: Binnentuin - Backend deploy
 on:
   push:
-    branches: master
+    # Negeer commits die zijn gemaakt in:
+    paths-ignore:
+      - '.github/**'
+      - 'extra/**'
+      - 'README.md'
+      - LICENSE
+    # De branch waarop het getriggerd wordt
+    branches: dev
 
 jobs:
   phpunit:
@@ -10,31 +16,53 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: nathanheffley/laravel-phpunit-action@master
+      # - uses: nathanheffley/laravel-phpunit-action@master
+      - name: Laravel PHPunit test
+        run: |
+          composer install --prefer-dist
+          cp .env.example .env
+          php artisan key:generate
+          php vendor/bin/phpunit
+        working-directory: ./laravel
   deploy:
     name: Deploy to production
     runs-on: ubuntu-latest
     needs: phpunit
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/dev'
     steps:
       - uses: actions/checkout@v1
-      - name: Setup PHP
-        uses: shivammathur/setup-php@master
-        with:
-          php-version: 7.4
-          extensions: mbstring, bcmath
-      - name: Composer install
-        run: composer install
-      - name: Setup Deployer
-        uses: atymic/deployer-php-action@master
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          ssh-known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
-      - name: Run Deployment
+      - name: Create .env file
+        run: 'echo "$ENV_FILE" > .env'
+        shell: bash
         env:
-          DOT_ENV: ${{ secrets.DOT_ENV }}
-          APP_HOST: ${{ secrets.APP_HOST }}
-          APP_DEPLOY_PATH: ${{ secrets.APP_DEPLOY_PATH }}
-          APP_DEPLOY_USER: ${{ secrets.APP_DEPLOY_USER }}
-          APP_DEPLOY_DEFAULT: ${{ secrets.APP_DEPLOY_DEFAULT }}
-        run: php artisan deploy -vvv
+          ENV_FILE: ${{secrets.DOT_ENV}}
+        working-directory: ./laravel
+      - name: Docker registry login
+        # run: docker login ${{ secrets.DOCKER_REGISTRY }}:5000
+        run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
+      # Build images
+      - name: Create Laravel Backend image
+        run: docker build -t studenttechlife/plant:backend .
+        working-directory: ./laravel
+      - name: Create NGINX image
+        run: docker build -t studenttechlife/plant:nginx .
+      # Push new docker images
+      - name: Push docker images
+        run: |
+          docker push studenttechlife/plant:backend
+          docker push studenttechlife/plant:nginx
+      # Update service image in swarm
+      - name: Deploy Laravel to swarm
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: docker service update --image studenttechlife/plant:backend plant_backend
+          host: ${{ secrets.DOCKER_VPN }}
+          username: plant
+          privateKey: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
+      - name: Deploy NGINX to swarm
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: docker service update --image studenttechlife/plant:nginx plant_nginx
+          host: ${{ secrets.DOCKER_VPN }}
+          username: plant
+          privateKey: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}

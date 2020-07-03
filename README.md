@@ -1,79 +1,63 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+![Binnentuin - Backend deploy](https://github.com/student-techlife/IPMEDT4-binnentuin-backend/workflows/Binnentuin%20-%20Backend%20deploy/badge.svg)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=student-techlife/IPMEDT4-binnentuin-backend)](https://dependabot.com)
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+# De Binnentuin app (backend)
 
-## About Laravel
+Deze repository is de backend-side van de binnentuin applicatie.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Het projectgroep bestaat uit:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Klaas
+- Lars
+- Vera
+- Anne-Sophie
+- Joeri
+- Ard
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## ℹ️ Gebruik van deze repository
 
-## Learning Laravel
+Om zoveel mogelijk git probleempjes te voorkomen, zijn er een aantal richtlijnen:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- De `dev` branch is de bakermat van de development.
+- 🤷 Wanneer je aan de slag gaat (nieuwe features/bugfix etc.) werk je in een branch die afstamt van de `dev` branch. Middels een **Pull Request** met als target branch `dev`, voeg je uiteindelijk je wijzigingen samen.
+- 📅 Wanneer we tot een stable release komen, volgt er een merge van `dev` naar `master` met een release tag.
+- ⛔ Er mogen geen directe commits worden uitgevoerd op de `dev` en `master` branch (uitzonderingen daargelaten, branches zijn protected).
+- 🔎 Een PR dient door iemand anders dan je zelf te worden **gereviewed** en **gemerged**, iedereen krijgt automatisch een PR ter review toebedeeld.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+# 🧰 Hoe aan de slag?
 
-## Laravel Sponsors
+Hieronder staat beschreven hoe je een werk omgeving kan opzetten. Kom je er niet uit? Geef dit dan aan binnen het team 😄 Heb je problemen met GIT? Bekijk dan de [eerste hulp bij GIT problemen](/extra/help.md) pagina.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Voorbereiding
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
+Voordat je een werk omgeving opzet, is het eerst belangrijk om de MySQL database in orde te krijgen. Database draaien in docker? Ask @klaasnicolaas.
 
-## Contributing
+1. Login in je MySQL omgeving.
+2. Maak een nieuwe database aan: `CREATE DATABASE [NAAAM DATABASE];`
+3. (optioneel) Maak een nieuwe gebruiker aan: `CREATE USER '[GEBRUIKERSNAAM]'@'localhost' IDENTIFIED BY '[WACHTWOORD]';`
+4. Geef de (nieuwe) gebruiker rechten over de gemaakte database: `GRANT ALL PRIVILEGES ON [DATABASE NAAM].* TO '[GEBRUIKERSNAAM]'@'localhost';`
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Opzetten werk omgeving
 
-## Code of Conduct
+1. Clone deze repository naar een gewenste directory: `git clone git@github.com:student-techlife/IPMEDT4-binnentuin-backend.git`
+2. Zorg er voor dat je in MySQL [een database hebt met username en (native) password](#voorbereiding) 
+3. Navigeer in je code editor naar de `laravel` directory
+4. Maak een kopie van de file: `.env.example` en hernoem het naar `.env`
+5. Pas de database gegevens aan in de `.env` file met jouw eigen MySQL gegevens
+6. Open een terminal in de `laravel` directory
+7. Voer uit: `composer install`
+8. Voer uit: `php artisan key:generate`
+9. Check in de `.env` file of de variable `API_KEY=` is ingevuld
+10. Voer uit: `php artisan migrate`
+11. Voer uit: `php artisan serve`
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Als het goed is moet je nu via de URL een scherm krijgen waar je kan inloggen.
 
-## Security Vulnerabilities
+# ➕ Handige VSCODE extensions
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- [Laravel Blade Snippets](https://marketplace.visualstudio.com/items?itemName=onecentlin.laravel-blade)
+- [Laravel Artisan](https://marketplace.visualstudio.com/items?itemName=ryannaddy.laravel-artisan)
+- [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare-pack)
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+Dit project is naar aanleiding van een studie project aan de Hogeschool van Leiden.
